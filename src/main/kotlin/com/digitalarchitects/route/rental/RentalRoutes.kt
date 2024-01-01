@@ -51,10 +51,10 @@ fun Route.rentalRoutes(
         try {
             val rental = rentalDataSource.getRentalsByUserId(userId)
 
-            if (rental != null) {
+            if (rental.isNotEmpty()) {
                 call.respond(rental)
             } else {
-                call.respondText("Rental not found for user with id: $userId", status = HttpStatusCode.NotFound)
+                call.respondText("No Rentals found for user with id: $userId", status = HttpStatusCode.NotFound)
             }
 
         } catch (e: Exception) {
@@ -71,10 +71,10 @@ fun Route.rentalRoutes(
         try {
             val rental = rentalDataSource.getRentalsByVehicleId(vehicleId)
 
-            if (rental != null) {
+            if (rental.isNotEmpty()) {
                 call.respond(rental)
             } else {
-                call.respondText("Rental not found for vehicle with id: $vehicleId", status = HttpStatusCode.NotFound)
+                call.respondText("No Rentals found for vehicle with id: $vehicleId", status = HttpStatusCode.NotFound)
             }
 
         } catch (e: Exception) {
