@@ -7,7 +7,7 @@ interface UserDataSource {
     suspend fun getUserByEmail(email: String): User?
     suspend fun insertUser(user: User): Boolean
     suspend fun getUsers(): List<User>
-    suspend fun getUserById(id: String): User?
+    suspend fun getUserById(userId: String): User?
     suspend fun updateUser(userId: String, updatedUser: UpdateUserRequest): Boolean
-    suspend fun deleteUserById(id: String): Boolean
+    suspend fun deleteUserById(userId: String): Boolean
 }

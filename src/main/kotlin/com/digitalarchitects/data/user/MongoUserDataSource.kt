@@ -25,12 +25,12 @@ class MongoUserDataSource(
         return users.find().toList()
     }
 
-    override suspend fun getUserById(id: String): User? {
-        return users.findOne(User::userId eq id)
+    override suspend fun getUserById(userId: String): User? {
+        return users.findOne(User::userId eq userId)
     }
 
-    override suspend fun updateUser(id: String, updatedUser: UpdateUserRequest): Boolean {
-        val user = getUserById(id) ?: return false
+    override suspend fun updateUser(userId: String, updatedUser: UpdateUserRequest): Boolean {
+        val user = getUserById(userId) ?: return false
 
         val updatedDocument = user.copy(
             password = updatedUser.password,
@@ -44,13 +44,13 @@ class MongoUserDataSource(
             city = updatedUser.city
         )
 
-        val updateResult = users.replaceOne(User::userId eq id, updatedDocument)
+        val updateResult = users.replaceOne(User::userId eq userId, updatedDocument)
 
         return updateResult.wasAcknowledged()
     }
 
-    override suspend fun deleteUserById(id: String): Boolean {
-        val userId: Id<User> = ObjectId(id).toId()
-        return users.deleteOneById(userId).wasAcknowledged()
+    override suspend fun deleteUserById(userId: String): Boolean {
+        val userIdAsId: Id<User> = ObjectId(userId).toId()
+        return users.deleteOneById(userIdAsId).wasAcknowledged()
     }
 }

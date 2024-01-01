@@ -1,12 +1,12 @@
 package com.digitalarchitects.data.vehicle
 
-import com.digitalarchitects.data.requests.UpdateUserRequest
 import com.digitalarchitects.data.requests.UpdateVehicleRequest
 import com.digitalarchitects.data.user.User
 import org.bson.types.ObjectId
 import org.litote.kmongo.Id
 import org.litote.kmongo.coroutine.CoroutineDatabase
 import org.litote.kmongo.eq
+import org.litote.kmongo.id.toId
 
 class MongoVehicleDataSource(
     db: CoroutineDatabase
@@ -26,12 +26,12 @@ class MongoVehicleDataSource(
         return vehicles.find().toList()
     }
 
-    override suspend fun getVehicleById(id: String): Vehicle? {
-        return vehicles.findOne(Vehicle::vehicleId eq id)
+    override suspend fun getVehicleById(vehicleId: String): Vehicle? {
+        return vehicles.findOne(Vehicle::vehicleId eq vehicleId)
     }
 
-    override suspend fun updateVehicle(id: String, updatedVehicle: UpdateVehicleRequest): Boolean {
-        val vehicle = getVehicleById(id) ?: return false
+    override suspend fun updateVehicle(vehicleId: String, updatedVehicle: UpdateVehicleRequest): Boolean {
+        val vehicle = getVehicleById(vehicleId) ?: return false
 
         val updatedDocument = vehicle.copy(
             userId = updatedVehicle.userId,
@@ -48,12 +48,13 @@ class MongoVehicleDataSource(
             availability = updatedVehicle.availability
         )
 
-        val updateResult = vehicles.replaceOne(Vehicle::vehicleId eq id, updatedDocument)
+        val updateResult = vehicles.replaceOne(Vehicle::vehicleId eq vehicleId, updatedDocument)
 
         return updateResult.wasAcknowledged()
     }
 
-    override suspend fun deleteVehicleById(id: String): Boolean {
-        return vehicles.deleteOneById(id).wasAcknowledged()
+    override suspend fun deleteVehicleById(vehicleId: String): Boolean {
+        val vehicleIdAsId: Id<User> = ObjectId(vehicleId).toId()
+        return vehicles.deleteOneById(vehicleIdAsId).wasAcknowledged()
     }
 }

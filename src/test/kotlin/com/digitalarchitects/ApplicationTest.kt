@@ -1,5 +1,6 @@
 package com.digitalarchitects
 
+import com.digitalarchitects.data.rental.MongoRentalDataSource
 import com.digitalarchitects.data.user.MongoUserDataSource
 import com.digitalarchitects.data.vehicle.MongoVehicleDataSource
 import com.digitalarchitects.plugins.*
@@ -24,6 +25,7 @@ class ApplicationTest {
                 .getDatabase("rmcKtor")
             val userDataSource = MongoUserDataSource(db)
             val vehicleDataSource = MongoVehicleDataSource(db)
+            val rentalDataSource = MongoRentalDataSource(db)
             val tokenService = JwtTokenService()
             val tokenConfig = TokenConfig(
                 issuer = environment.config.property("jwt.issuer").getString(),
@@ -35,7 +37,7 @@ class ApplicationTest {
             val hashingService = SHA256HashingService()
 
             configureSecurity(tokenConfig)
-            configureRouting(userDataSource, vehicleDataSource, hashingService, tokenService, tokenConfig)
+            configureRouting(userDataSource, vehicleDataSource, rentalDataSource, hashingService, tokenService, tokenConfig)
             configureMonitoring()
             configureSerialization()
         }
