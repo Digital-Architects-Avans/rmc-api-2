@@ -1,0 +1,33 @@
+POST http://localhost:8080/vehicles
+Content-Type: application/json
+
+{
+  "userId": 1,
+  "brand": "BMW",
+  "model": "X5",
+  "year": 2015,
+  "vehicleClass": "SUV",
+  "engineType": "FCEV",
+  "licensePlate": "ABC-124",
+  "imgLink": "https://www.bmw.com/content/dam/bmw/marketBMWCOM/bmw_com/categories/vehicles/x-series/x5/2018/navigation/BMW-x5-navigation-01.jpg",
+  "latitude": 44.7866,
+  "longitude": 20.4489,
+  "price": 100,
+  "availability": true
+}
+
+###
+GET http://localhost:8080/vehicles
+Accept: application/json
+
+###
+GET http://localhost:8080/vehicles/659328142ba56a394ce51806
+Accept: application/json
+
+###
+GET http://localhost:8080/vehicles/licensePlate/ABC-123
+Accept: application/json
+
+###
+DELETE http://localhost:8080/vehicles/659328142ba56a394ce51806
+Accept: application/json

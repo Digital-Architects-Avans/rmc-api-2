@@ -1,4 +1,9 @@
 package com.digitalarchitects.security.token
 
-class TokenService {
+interface TokenService {
+    fun generate(
+        config: TokenConfig,
+        vararg claims: TokenClaim
+    ): String
+
 }

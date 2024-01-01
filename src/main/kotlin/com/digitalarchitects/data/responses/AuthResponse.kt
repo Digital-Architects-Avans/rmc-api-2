@@ -1,3 +1,8 @@
 package com.digitalarchitects.data.responses
 
-data class AuthResponse()
+import kotlinx.serialization.Serializable
+
+@Serializable
+data class AuthResponse(
+    val token: String
+)

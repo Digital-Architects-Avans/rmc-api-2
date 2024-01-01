@@ -1,11 +1,13 @@
 package com.digitalarchitects.data.requests
 
+import com.digitalarchitects.data.user.UserType
 import kotlinx.serialization.Serializable
 
 @Serializable
-data class AuthRequest(
+data class SignUpRequest(
     val email: String,
     val password: String,
+    val userType: UserType,
     val firstName: String,
     val lastName: String,
     val phone: String,

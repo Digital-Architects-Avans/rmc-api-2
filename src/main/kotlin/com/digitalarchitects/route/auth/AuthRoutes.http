@@ -1,0 +1,35 @@
+POST http://localhost:8080/signup
+Content-Type: application/json
+
+{
+  "email": "testemail3@email.com",
+  "password": "password",
+  "userType": "CLIENT",
+  "firstName": "John",
+  "lastName": "Doe",
+  "phone": "123456789",
+  "street": "Test Street",
+  "buildingNumber": "1",
+  "zipCode": "12-345",
+  "city": "Test City"
+}
+###
+
+POST http://localhost:8080/signin
+Content-Type: application/json
+
+{
+  "email": "testemail4@email.com",
+  "password": "password"
+}
+###
+
+GET http://localhost:8080/authenticate
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJ1c2VycyIsImlzcyI6Imh0dHA6Ly8wLjAuMC4wOjgwODAiLCJleHAiOjE3MzU2NDYwNzUsInVzZXJJZCI6IjY1OTJhNzRjYTg0NjM3MDgxODhjNmEwMSJ9.5R4sPftZNT1PcjN8xLQ4FIQJGzimSKmnlhgE4CVzukw
+###
+
+GET http://localhost:8080/secret
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJ1c2VycyIsImlzcyI6Imh0dHA6Ly8wLjAuMC4wOjgwODAiLCJleHAiOjE3MzU2NDYwNzUsInVzZXJJZCI6IjY1OTJhNzRjYTg0NjM3MDgxODhjNmEwMSJ9.5R4sPftZNT1PcjN8xLQ4FIQJGzimSKmnlhgE4CVzukw
+###

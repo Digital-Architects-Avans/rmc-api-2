@@ -1,11 +1,30 @@
-POST http://localhost:8080/api/item
-Content-Type: application/json
-
-{}
-
-###
-GET http://localhost:8080/users/{id}}
+GET http://localhost:8080/users
 Accept: application/json
 
-DELETE http://localhost:8080/users/{id}
+###
+GET http://localhost:8080/users/65932c52ad7c5d6aa69f7366
+Accept: application/json
+
+###
+PUT http://localhost:8080/users/65931e405b4e73276fd10905
+Content-Type: application/json
+
+{
+  "password": "password",
+  "userType": "CLIENT",
+  "firstName": "John",
+  "lastName": "Doe",
+  "phone": "123456789",
+  "street": "Test Street",
+  "buildingNumber": "1",
+  "zipCode": "12-345",
+  "city": "Test City"
+}
+
+###
+GET http://localhost:8080/users/email/testemail@email.com
+Accept: application/json
+
+###
+DELETE http://localhost:8080/users/6592a9878e7da12c3d694687
 Accept: application/json

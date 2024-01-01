@@ -1,6 +1,7 @@
-package com.digitalarchitects
+package com.digitalarchitects.route.auth
 
 import com.digitalarchitects.data.requests.AuthRequest
+import com.digitalarchitects.data.requests.SignUpRequest
 import com.digitalarchitects.data.responses.AuthResponse
 import com.digitalarchitects.data.user.User
 import com.digitalarchitects.data.user.UserDataSource
@@ -18,12 +19,15 @@ import io.ktor.server.request.*
 import io.ktor.server.response.*
 import io.ktor.server.routing.*
 
-fun Route.signUp(
+
+fun Route.authRoutes(
+    userDataSource: UserDataSource,
     hashingService: HashingService,
-    userDataSource: UserDataSource
+    tokenService: TokenService,
+    tokenConfig: TokenConfig
 ) {
     post("/signup") {
-        val request = call.receiveNullable<AuthRequest>() ?: kotlin.run {
+        val request = call.receiveNullable<SignUpRequest>() ?: kotlin.run {
             call.respond(HttpStatusCode.BadRequest)
             return@post
         }
@@ -32,6 +36,10 @@ fun Route.signUp(
         val isPasswordTooShort = request.password.length < 8
         if (areFieldsBlank || isPasswordTooShort) {
             call.respond(HttpStatusCode.Conflict, "Invalid username or password")
+            return@post
+        }
+        if (userDataSource.getUserByEmail(request.email) != null) {
+            call.respond(HttpStatusCode.Conflict, "User already exists")
             return@post
         }
 
@@ -57,14 +65,7 @@ fun Route.signUp(
 
         call.respond(HttpStatusCode.Created)
     }
-}
 
-fun Route.signIn(
-    userDataSource: UserDataSource,
-    hashingService: HashingService,
-    tokenService: TokenService,
-    tokenConfig: TokenConfig
-) {
     post("/signin") {
         val request = call.receiveNullable<AuthRequest>() ?: kotlin.run {
             call.respond(HttpStatusCode.BadRequest)
@@ -93,7 +94,7 @@ fun Route.signIn(
             config = tokenConfig,
             TokenClaim(
                 name = "userId",
-                value = user.id.toString()
+                value = user.userId
             )
         )
 
@@ -104,20 +105,13 @@ fun Route.signIn(
             )
         )
     }
-}
 
-// This route will check if the token the user has saved in preferences is still valid
-// You can make a request to this route during the splash screen of the app
-// If not valid redirect user to login screen
-fun Route.authenticate() {
     authenticate {
         get("/authenticate") {
             call.respond(HttpStatusCode.OK)
         }
     }
-}
 
-fun Route.getSecretInfo() {
     authenticate {
         get("/secret") {
             val principal = call.principal<JWTPrincipal>()

@@ -1,0 +1,30 @@
+POST http://localhost:8080/rentals
+Content-Type: application/json
+
+{
+  "vehicleId": 2,
+  "userId": 2,
+  "date": "2020-01-01",
+  "price": 100.0,
+  "latitude": 1.0,
+  "longitude": 1.0,
+  "status": "PENDING",
+  "distanceTravelled": 100.0,
+  "score": 5
+}
+
+###
+GET http://localhost:8080/rentals
+Accept: application/json
+
+###
+GET http://localhost:8080/rentals/6593294bfd0c2051ae84e3cd
+Accept: application/json
+
+###
+GET http://localhost:8080/rentals/user/2
+Accept: application/json
+
+###
+DELETE http://localhost:8080/rentals/6593294bfd0c2051ae84e3cd
+Accept: application/json

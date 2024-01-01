@@ -1,4 +1,8 @@
 package com.digitalarchitects.security.token
 
-class TokenConfig {
-}
+data class TokenConfig (
+    val issuer: String,
+    val audience: String,
+    val expiresIn: Long,
+    val secret: String
+)
