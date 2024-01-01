@@ -2,16 +2,15 @@ package com.digitalarchitects
 
 import com.digitalarchitects.data.rental.MongoRentalDataSource
 import com.digitalarchitects.data.user.MongoUserDataSource
-import com.digitalarchitects.data.user.User
-import com.digitalarchitects.data.user.UserType
 import com.digitalarchitects.data.vehicle.MongoVehicleDataSource
-import com.digitalarchitects.plugins.*
+import com.digitalarchitects.plugins.configureMonitoring
+import com.digitalarchitects.plugins.configureRouting
+import com.digitalarchitects.plugins.configureSecurity
+import com.digitalarchitects.plugins.configureSerialization
 import com.digitalarchitects.security.hashing.SHA256HashingService
 import com.digitalarchitects.security.token.JwtTokenService
 import com.digitalarchitects.security.token.TokenConfig
 import io.ktor.server.application.*
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.launch
 import org.litote.kmongo.coroutine.coroutine
 import org.litote.kmongo.reactivestreams.KMongo
 
