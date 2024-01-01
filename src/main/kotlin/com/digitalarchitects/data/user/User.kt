@@ -12,6 +12,8 @@ enum class UserType {
 
 @Serializable
 data class User (
+    @SerialName("_id") @Serializable(with = ObjectIdAsStringSerializer::class) val objectId: Id<User> = newId(),
+    @SerialName("userId") val userId: String = objectId.toString(),
     val email: String,
     val password: String,
     val salt: String,
@@ -22,7 +24,5 @@ data class User (
     val street: String,
     val buildingNumber: String,
     val zipCode: String,
-    val city: String,
-    @SerialName("_id") @Serializable(with = ObjectIdAsStringSerializer::class) val objectId: Id<User> = newId(),
-    @SerialName("userId") val userId: String = objectId.toString()
+    val city: String
 )

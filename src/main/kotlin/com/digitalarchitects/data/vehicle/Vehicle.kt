@@ -12,6 +12,8 @@ enum class EngineType{
 
 @Serializable
 data class Vehicle(
+    @SerialName("_id") @Serializable(with = ObjectIdAsStringSerializer::class) val objectId: Id<Vehicle> = newId(),
+    @SerialName("vehicleId") val vehicleId: String = objectId.toString(),
     val userId: Int,
     val brand: String,
     val model: String,
@@ -23,7 +25,5 @@ data class Vehicle(
     val latitude: Float,
     val longitude: Float,
     val price: Double,
-    val availability: Boolean,
-    @SerialName("_id") @Serializable(with = ObjectIdAsStringSerializer::class) val objectId: Id<Vehicle> = newId(),
-    @SerialName("vehicleId") val vehicleId: String = objectId.toString()
+    val availability: Boolean
 )
