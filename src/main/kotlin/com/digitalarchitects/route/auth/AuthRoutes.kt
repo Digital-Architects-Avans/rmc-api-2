@@ -1,6 +1,7 @@
 package com.digitalarchitects.route.auth
 
 import com.digitalarchitects.data.requests.AuthRequest
+import com.digitalarchitects.data.requests.RefreshTokenRequest
 import com.digitalarchitects.data.requests.SignUpRequest
 import com.digitalarchitects.data.responses.AuthResponse
 import com.digitalarchitects.data.user.User
@@ -109,6 +110,35 @@ fun Route.authRoutes(
     authenticate {
         get("/authenticate") {
             call.respond(HttpStatusCode.OK)
+        }
+    }
+
+    post("/refreshToken") {
+        val request = call.receive<RefreshTokenRequest>()
+
+        val userIdFromToken = request.token.let { tokenService.getUserIdFromToken(it) }
+
+        if (userIdFromToken != null) {
+            val foundUser = userDataSource.getUserById(userIdFromToken)
+            if (foundUser == null) {
+                call.respond(HttpStatusCode.NotFound, "User not found")
+                return@post
+            }
+            val token = tokenService.generate(
+                config = tokenConfig,
+                TokenClaim(
+                    name = "userId",
+                    value = userIdFromToken
+                )
+            )
+            call.respond(
+                status = HttpStatusCode.OK,
+                message = AuthResponse(
+                    token = token
+                )
+            )
+        } else {
+            call.respond(HttpStatusCode.Unauthorized, "Invalid token")
         }
     }
 

@@ -6,8 +6,8 @@ Content-Type: application/json
   "userId": 2,
   "date": "2020-01-01",
   "price": 100.0,
-  "latitude": 1.0,
-  "longitude": 1.0,
+  "latitude": 15.01232,
+  "longitude": 12.0122,
   "status": "PENDING",
   "distanceTravelled": 100.0,
   "score": 5
@@ -26,5 +26,5 @@ GET http://localhost:8080/rentals/user/2
 Accept: application/json
 
 ###
-DELETE http://localhost:8080/rentals/6593294bfd0c2051ae84e3cd
+DELETE http://localhost:8080/rentals/6593514d58f59d305f2fa133
 Accept: application/json

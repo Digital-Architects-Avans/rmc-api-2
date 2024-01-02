@@ -6,4 +6,5 @@ interface TokenService {
         vararg claims: TokenClaim
     ): String
 
+    fun getUserIdFromToken(token: String): String?
 }

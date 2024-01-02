@@ -16,4 +16,8 @@ class JwtTokenService: TokenService {
         return token.sign(Algorithm.HMAC256(config.secret))
     }
 
+    override fun getUserIdFromToken(token: String): String? {
+        return JWT.decode(token).claims["userId"]?.asString()
+    }
+
 }
