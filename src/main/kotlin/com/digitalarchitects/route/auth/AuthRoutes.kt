@@ -20,7 +20,6 @@ import io.ktor.server.request.*
 import io.ktor.server.response.*
 import io.ktor.server.routing.*
 
-
 fun Route.authRoutes(
     userDataSource: UserDataSource,
     hashingService: HashingService,
@@ -107,12 +106,6 @@ fun Route.authRoutes(
         )
     }
 
-    authenticate {
-        get("/authenticate") {
-            call.respond(HttpStatusCode.OK)
-        }
-    }
-
     post("/refreshToken") {
         val request = call.receive<RefreshTokenRequest>()
 
@@ -143,6 +136,10 @@ fun Route.authRoutes(
     }
 
     authenticate {
+        get("/authenticate") {
+            call.respond(HttpStatusCode.OK)
+        }
+
         get("/secret") {
             val principal = call.principal<JWTPrincipal>()
             val userId = principal?.getClaim("userId", String::class)
