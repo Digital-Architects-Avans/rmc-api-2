@@ -2,8 +2,8 @@ POST http://localhost:8080/rentals
 Content-Type: application/json
 
 {
-  "vehicleId": 2,
-  "userId": 2,
+  "vehicleId": "1",
+  "userId": "1",
   "date": "2020-01-01",
   "price": 100.0,
   "latitude": 15.01232,

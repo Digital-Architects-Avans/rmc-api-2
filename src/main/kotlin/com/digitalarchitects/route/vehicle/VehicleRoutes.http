@@ -2,7 +2,7 @@ POST http://localhost:8080/vehicles
 Content-Type: application/json
 
 {
-  "userId": 1,
+  "userId": "1",
   "brand": "BMW",
   "model": "X5",
   "year": 2015,
