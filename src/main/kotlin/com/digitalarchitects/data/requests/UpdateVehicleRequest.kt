@@ -12,7 +12,7 @@ data class UpdateVehicleRequest(
     val vehicleClass: String,
     val engineType: EngineType,
     val licensePlate: String,
-    val imgLink: String,
+    val imgLink: Int,
     val latitude: Float,
     val longitude: Float,
     val price: Double,
