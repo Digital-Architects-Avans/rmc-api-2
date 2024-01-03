@@ -4,7 +4,7 @@ Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJ1c2VycyIsImlzcyI6Imh0dHA6Ly8wLjAuMC4wOjgwODAiLCJleHAiOjE3MzU2NDYwNzUsInVzZXJJZCI6IjY1OTJhNzRjYTg0NjM3MDgxODhjNmEwMSJ9.5R4sPftZNT1PcjN8xLQ4FIQJGzimSKmnlhgE4CVzukw
 
 {
-  "userId": "FILL-USER-1",
+  "userId": "FILL_USER_1",
   "brand": "BMW",
   "model": "X5",
   "year": 2015,
@@ -24,7 +24,7 @@ Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJ1c2VycyIsImlzcyI6Imh0dHA6Ly8wLjAuMC4wOjgwODAiLCJleHAiOjE3MzU2NDYwNzUsInVzZXJJZCI6IjY1OTJhNzRjYTg0NjM3MDgxODhjNmEwMSJ9.5R4sPftZNT1PcjN8xLQ4FIQJGzimSKmnlhgE4CVzukw
 
 {
-  "userId": "FILL-USER-1",
+  "userId": "FILL_USER_1",
   "brand": "Audi",
   "model": "RS6 Avant",
   "year": 2020,
@@ -44,7 +44,7 @@ Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJ1c2VycyIsImlzcyI6Imh0dHA6Ly8wLjAuMC4wOjgwODAiLCJleHAiOjE3MzU2NDYwNzUsInVzZXJJZCI6IjY1OTJhNzRjYTg0NjM3MDgxODhjNmEwMSJ9.5R4sPftZNT1PcjN8xLQ4FIQJGzimSKmnlhgE4CVzukw
 
 {
-  "userId": "FILL-USER-1",
+  "userId": "FILL_USER_1",
   "brand": "Tesla",
   "model": "Roadster",
   "year": 2010,
@@ -64,7 +64,7 @@ Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJ1c2VycyIsImlzcyI6Imh0dHA6Ly8wLjAuMC4wOjgwODAiLCJleHAiOjE3MzU2NDYwNzUsInVzZXJJZCI6IjY1OTJhNzRjYTg0NjM3MDgxODhjNmEwMSJ9.5R4sPftZNT1PcjN8xLQ4FIQJGzimSKmnlhgE4CVzukw
 
 {
-  "userId": "FILL-USER-2",
+  "userId": "FILL_USER_2",
   "brand": "Toyota",
   "model": "Yaris",
   "year": 2011,
@@ -84,7 +84,7 @@ Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJ1c2VycyIsImlzcyI6Imh0dHA6Ly8wLjAuMC4wOjgwODAiLCJleHAiOjE3MzU2NDYwNzUsInVzZXJJZCI6IjY1OTJhNzRjYTg0NjM3MDgxODhjNmEwMSJ9.5R4sPftZNT1PcjN8xLQ4FIQJGzimSKmnlhgE4CVzukw
 
 {
-  "userId": "FILL-USER-2",
+  "userId": "FILL_USER_2",
   "brand": "Honda",
   "model": "Civic",
   "year": 2020,
@@ -104,7 +104,7 @@ Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJ1c2VycyIsImlzcyI6Imh0dHA6Ly8wLjAuMC4wOjgwODAiLCJleHAiOjE3MzU2NDYwNzUsInVzZXJJZCI6IjY1OTJhNzRjYTg0NjM3MDgxODhjNmEwMSJ9.5R4sPftZNT1PcjN8xLQ4FIQJGzimSKmnlhgE4CVzukw
 
 {
-  "userId": "FILL-USER-2",
+  "userId": "FILL_USER_2",
   "brand": "Ford",
   "model": "Focus",
   "year": 2019,
@@ -124,7 +124,7 @@ Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJ1c2VycyIsImlzcyI6Imh0dHA6Ly8wLjAuMC4wOjgwODAiLCJleHAiOjE3MzU2NDYwNzUsInVzZXJJZCI6IjY1OTJhNzRjYTg0NjM3MDgxODhjNmEwMSJ9.5R4sPftZNT1PcjN8xLQ4FIQJGzimSKmnlhgE4CVzukw
 
 {
-"userId": "FILL-USER-3",
+"userId": "FILL_USER_3",
 "brand": "Chevrolet",
 "model": "Malibu",
 "year": 1980,
@@ -144,7 +144,7 @@ Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJ1c2VycyIsImlzcyI6Imh0dHA6Ly8wLjAuMC4wOjgwODAiLCJleHAiOjE3MzU2NDYwNzUsInVzZXJJZCI6IjY1OTJhNzRjYTg0NjM3MDgxODhjNmEwMSJ9.5R4sPftZNT1PcjN8xLQ4FIQJGzimSKmnlhgE4CVzukw
 
 {
-  "userId": "FILL-USER-3",
+  "userId": "FILL_USER_3",
   "brand": "Buick",
   "model": "Roadmaster",
   "year": 1955,
@@ -164,7 +164,7 @@ Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJ1c2VycyIsImlzcyI6Imh0dHA6Ly8wLjAuMC4wOjgwODAiLCJleHAiOjE3MzU2NDYwNzUsInVzZXJJZCI6IjY1OTJhNzRjYTg0NjM3MDgxODhjNmEwMSJ9.5R4sPftZNT1PcjN8xLQ4FIQJGzimSKmnlhgE4CVzukw
 
 {
-  "userId": "FILL-USER-4",
+  "userId": "FILL_USER_4",
   "brand": "Mazda",
   "model": "MX-5 RF",
   "year": 2012,
@@ -184,7 +184,7 @@ Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJ1c2VycyIsImlzcyI6Imh0dHA6Ly8wLjAuMC4wOjgwODAiLCJleHAiOjE3MzU2NDYwNzUsInVzZXJJZCI6IjY1OTJhNzRjYTg0NjM3MDgxODhjNmEwMSJ9.5R4sPftZNT1PcjN8xLQ4FIQJGzimSKmnlhgE4CVzukw
 
 {
-  "userId": "FILL-USER-4",
+  "userId": "FILL_USER_4",
   "brand": "Ford",
   "model": "F-150 Raptor",
   "year": 2023,
