@@ -18,8 +18,8 @@ enum class RentalStatus(val status: String) {
 data class Rental(
     @SerialName("_id") @Serializable(with = ObjectIdAsStringSerializer::class) val objectId: Id<Rental> = newId(),
     @SerialName("rentalId") val rentalId: String = objectId.toString(),
-    val vehicleId: Int,
-    val userId: Int,
+    val vehicleId: String,
+    val userId: String,
     val date: LocalDate,
     val price: Double,
     val latitude: Float,

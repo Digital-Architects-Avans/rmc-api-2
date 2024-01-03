@@ -13,11 +13,11 @@ class MongoRentalDataSource(
 ): RentalDataSource {
 
     private val rentals = db.getCollection<Rental>()
-    override suspend fun getRentalsByVehicleId(vehicleId: Int): List<Rental> {
+    override suspend fun getRentalsByVehicleId(vehicleId: String): List<Rental> {
         return rentals.find(Rental::vehicleId eq vehicleId).toList()
     }
 
-    override suspend fun getRentalsByUserId(userId: Int): List<Rental> {
+    override suspend fun getRentalsByUserId(userId: String): List<Rental> {
         return rentals.find(Rental::userId eq userId).toList()
     }
 

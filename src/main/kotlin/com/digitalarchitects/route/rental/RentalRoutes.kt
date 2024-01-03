@@ -44,7 +44,7 @@ fun Route.rentalRoutes(
         }
 
         get("/rentals/user/{userId}") {
-            val userId = call.parameters["userId"]?.toIntOrNull() ?: run {
+            val userId = call.parameters["userId"] ?: run {
                 call.respondText("Invalid userId", status = HttpStatusCode.BadRequest)
                 return@get
             }
@@ -64,7 +64,7 @@ fun Route.rentalRoutes(
         }
 
         get("/rentals/vehicle/{vehicleId}") {
-            val vehicleId = call.parameters["vehicleId"]?.toIntOrNull() ?: run {
+            val vehicleId = call.parameters["vehicleId"] ?: run {
                 call.respondText("Invalid vehicleId", status = HttpStatusCode.BadRequest)
                 return@get
             }
