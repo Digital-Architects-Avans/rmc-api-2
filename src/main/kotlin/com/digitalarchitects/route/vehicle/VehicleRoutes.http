@@ -1,5 +1,6 @@
 POST http://localhost:8080/vehicles
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJ1c2VycyIsImlzcyI6Imh0dHA6Ly8wLjAuMC4wOjgwODAiLCJleHAiOjE3MzU2NDYwNzUsInVzZXJJZCI6IjY1OTJhNzRjYTg0NjM3MDgxODhjNmEwMSJ9.5R4sPftZNT1PcjN8xLQ4FIQJGzimSKmnlhgE4CVzukw
 
 {
   "userId": "1",
@@ -9,7 +10,7 @@ Content-Type: application/json
   "vehicleClass": "SUV",
   "engineType": "FCEV",
   "licensePlate": "ABC-124",
-  "imgLink": "https://www.bmw.com/content/dam/bmw/marketBMWCOM/bmw_com/categories/vehicles/x-series/x5/2018/navigation/BMW-x5-navigation-01.jpg",
+  "imgLink": 1,
   "latitude": 44.7866,
   "longitude": 20.4489,
   "price": 100,
