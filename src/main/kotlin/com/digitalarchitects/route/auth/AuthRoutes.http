@@ -73,6 +73,74 @@ Content-Type: application/json
   "city": "Breda"
 }
 
+### Add Renter #1
+POST http://localhost:8080/signup
+Content-Type: application/json
+
+{
+  "email": "renter1@example.com",
+  "password": "password",
+  "userType": "CLIENT",
+  "firstName": "Lucas",
+  "lastName": "Mertens",
+  "phone": "0658364852",
+  "street": "Turnhoutstraat",
+  "buildingNumber": "8",
+  "zipCode": "4826 KD",
+  "city": "Breda"
+}
+
+### Add Renter #2
+POST http://localhost:8080/signup
+Content-Type: application/json
+
+{
+  "email": "renter2@example.com",
+  "password": "password",
+  "userType": "CLIENT",
+  "firstName": "Olivia",
+  "lastName": "Janssens",
+  "phone": "0653417856",
+  "street": "Koekoekstraat",
+  "buildingNumber": "23",
+  "zipCode": "4815 AN",
+  "city": "Breda"
+}
+
+### Add Renter #3
+POST http://localhost:8080/signup
+Content-Type: application/json
+
+{
+  "email": "renter3@example.com",
+  "password": "password",
+  "userType": "CLIENT",
+  "firstName": "Yara",
+  "lastName": "Visser",
+  "phone": "0685721462",
+  "street": "Baronielaan 192",
+  "buildingNumber": "192",
+  "zipCode": "4837 BG",
+  "city": "Breda"
+}
+
+### Add Renter #4
+POST http://localhost:8080/signup
+Content-Type: application/json
+
+{
+  "email": "renter4@example.com",
+  "password": "password",
+  "userType": "CLIENT",
+  "firstName": "James",
+  "lastName": "van Dijk",
+  "phone": "0637539568",
+  "street": "Loevesteinstraat",
+  "buildingNumber": "20",
+  "zipCode": "4834 ED",
+  "city": "Breda"
+}
+
 ###
 POST http://localhost:8080/signin
 Content-Type: application/json
