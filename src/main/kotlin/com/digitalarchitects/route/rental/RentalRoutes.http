@@ -1,17 +1,391 @@
+### Add Rental #1 - Vehicle 1 (Renter 1)
 POST http://localhost:8080/rentals
 Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJ1c2VycyIsImlzcyI6Imh0dHA6Ly8wLjAuMC4wOjgwODAiLCJleHAiOjE3MzU2NDYwNzUsInVzZXJJZCI6IjY1OTJhNzRjYTg0NjM3MDgxODhjNmEwMSJ9.5R4sPftZNT1PcjN8xLQ4FIQJGzimSKmnlhgE4CVzukw
 
 {
-  "vehicleId": "1",
-  "userId": "1",
-  "date": "2020-01-01",
-  "price": 100.0,
-  "latitude": 15.01232,
-  "longitude": 12.0122,
+  "vehicleId": "FILL_VEHICLE_1_BMW",
+  "userId": "FILL_RENTER_1",
+  "date": "2023-01-15",
+  "price": 125.0,
+  "latitude": 51.592470,
+  "longitude": 4.793560,
   "status": "PENDING",
-  "distanceTravelled": 100.0,
+  "distanceTravelled": 0.0,
+  "score": 0
+}
+### Add Rental #2 - Vehicle 1 (Renter 2)
+POST http://localhost:8080/rentals
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJ1c2VycyIsImlzcyI6Imh0dHA6Ly8wLjAuMC4wOjgwODAiLCJleHAiOjE3MzU2NDYwNzUsInVzZXJJZCI6IjY1OTJhNzRjYTg0NjM3MDgxODhjNmEwMSJ9.5R4sPftZNT1PcjN8xLQ4FIQJGzimSKmnlhgE4CVzukw
+
+{
+  "vehicleId": "FILL_VEHICLE_1_BMW",
+  "userId": "FILL_RENTER_2",
+  "date": "2023-01-10",
+  "price": 100.0,
+  "latitude": 51.592470,
+  "longitude": 4.793560,
+  "status": "APPROVED",
+  "distanceTravelled": 235.0,
+  "score": 3
+}
+
+### Add Rental #3 - Vehicle 1 (Renter 3)
+POST http://localhost:8080/rentals
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJ1c2VycyIsImlzcyI6Imh0dHA6Ly8wLjAuMC4wOjgwODAiLCJleHAiOjE3MzU2NDYwNzUsInVzZXJJZCI6IjY1OTJhNzRjYTg0NjM3MDgxODhjNmEwMSJ9.5R4sPftZNT1PcjN8xLQ4FIQJGzimSKmnlhgE4CVzukw
+
+{
+  "vehicleId": "FILL_VEHICLE_1_BMW",
+  "userId": "FILL_RENTER_3",
+  "date": "2022-11-10",
+  "price": 100.0,
+  "latitude": 51.592470,
+  "longitude": 4.793560,
+  "status": "DENIED",
+  "distanceTravelled": 0.0,
+  "score": 0
+}
+
+### Add Rental #4 - Vehicle 2 (Renter 4)
+POST http://localhost:8080/rentals
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJ1c2VycyIsImlzcyI6Imh0dHA6Ly8wLjAuMC4wOjgwODAiLCJleHAiOjE3MzU2NDYwNzUsInVzZXJJZCI6IjY1OTJhNzRjYTg0NjM3MDgxODhjNmEwMSJ9.5R4sPftZNT1PcjN8xLQ4FIQJGzimSKmnlhgE4CVzukw
+
+{
+  "vehicleId": "FILL_VEHICLE_2_Audi",
+  "userId": "FILL_RENTER_4",
+  "date": "2023-01-19",
+  "price": 199.0,
+  "latitude": 51.592610,
+  "longitude": 4.791830,
+  "status": "PENDING",
+  "distanceTravelled": 0.0,
+  "score": 0
+}
+
+### Add Rental #5 - Vehicle 2 (Renter 1)
+POST http://localhost:8080/rentals
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJ1c2VycyIsImlzcyI6Imh0dHA6Ly8wLjAuMC4wOjgwODAiLCJleHAiOjE3MzU2NDYwNzUsInVzZXJJZCI6IjY1OTJhNzRjYTg0NjM3MDgxODhjNmEwMSJ9.5R4sPftZNT1PcjN8xLQ4FIQJGzimSKmnlhgE4CVzukw
+
+{
+  "vehicleId": "FILL_VEHICLE_2_Audi",
+  "userId": "FILL_RENTER_1",
+  "date": "2023-01-24",
+  "price": 199.0,
+  "latitude": 51.592610,
+  "longitude": 4.791830,
+  "status": "APPROVED",
+  "distanceTravelled": 0.0,
+  "score": 0
+}
+
+### Add Rental #6 - Vehicle 3 (Renter 2)
+POST http://localhost:8080/rentals
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJ1c2VycyIsImlzcyI6Imh0dHA6Ly8wLjAuMC4wOjgwODAiLCJleHAiOjE3MzU2NDYwNzUsInVzZXJJZCI6IjY1OTJhNzRjYTg0NjM3MDgxODhjNmEwMSJ9.5R4sPftZNT1PcjN8xLQ4FIQJGzimSKmnlhgE4CVzukw
+
+{
+  "vehicleId": "FILL_VEHICLE_3_Tesla",
+  "userId": "FILL_RENTER_2",
+  "date": "2023-02-03",
+  "price": 145.0,
+  "latitude": 51.589241,
+  "longitude": 4.786490,
+  "status": "APPROVED",
+  "distanceTravelled": 0.0,
+  "score": 0
+}
+
+### Add Rental #7 - Vehicle 3 (Renter 3)
+POST http://localhost:8080/rentals
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJ1c2VycyIsImlzcyI6Imh0dHA6Ly8wLjAuMC4wOjgwODAiLCJleHAiOjE3MzU2NDYwNzUsInVzZXJJZCI6IjY1OTJhNzRjYTg0NjM3MDgxODhjNmEwMSJ9.5R4sPftZNT1PcjN8xLQ4FIQJGzimSKmnlhgE4CVzukw
+
+{
+  "vehicleId": "FILL_VEHICLE_3_Tesla",
+  "userId": "FILL_RENTER_3",
+  "date": "2023-01-01",
+  "price": 145.0,
+  "latitude": 51.589241,
+  "longitude": 4.786490,
+  "status": "APPROVED",
+  "distanceTravelled": 250,
+  "score": 3
+}
+
+### Add Rental #8 - Vehicle 4 (Renter 4)
+POST http://localhost:8080/rentals
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJ1c2VycyIsImlzcyI6Imh0dHA6Ly8wLjAuMC4wOjgwODAiLCJleHAiOjE3MzU2NDYwNzUsInVzZXJJZCI6IjY1OTJhNzRjYTg0NjM3MDgxODhjNmEwMSJ9.5R4sPftZNT1PcjN8xLQ4FIQJGzimSKmnlhgE4CVzukw
+
+{
+  "vehicleId": "FILL_VEHICLE_4_Toyota",
+  "userId": "FILL_RENTER_4",
+  "date": "2023-01-10",
+  "price": 35.0,
+  "latitude": 51.583698,
+  "longitude": 4.797110,
+  "status": "APPROVED",
+  "distanceTravelled": 76,
   "score": 5
+}
+
+### Add Rental #9 - Vehicle 4 (Renter 1)
+POST http://localhost:8080/rentals
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJ1c2VycyIsImlzcyI6Imh0dHA6Ly8wLjAuMC4wOjgwODAiLCJleHAiOjE3MzU2NDYwNzUsInVzZXJJZCI6IjY1OTJhNzRjYTg0NjM3MDgxODhjNmEwMSJ9.5R4sPftZNT1PcjN8xLQ4FIQJGzimSKmnlhgE4CVzukw
+
+{
+  "vehicleId": "FILL_VEHICLE_4_Toyota",
+  "userId": "FILL_RENTER_1",
+  "date": "2022-12-15",
+  "price": 30.0,
+  "latitude": 51.583698,
+  "longitude": 4.797110,
+  "status": "APPROVED",
+  "distanceTravelled": 136,
+  "score": 3
+}
+
+### Add Rental #10 - Vehicle 4 (Renter 2)
+POST http://localhost:8080/rentals
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJ1c2VycyIsImlzcyI6Imh0dHA6Ly8wLjAuMC4wOjgwODAiLCJleHAiOjE3MzU2NDYwNzUsInVzZXJJZCI6IjY1OTJhNzRjYTg0NjM3MDgxODhjNmEwMSJ9.5R4sPftZNT1PcjN8xLQ4FIQJGzimSKmnlhgE4CVzukw
+
+{
+  "vehicleId": "FILL_VEHICLE_4_Toyota",
+  "userId": "FILL_RENTER_2",
+  "date": "2023-01-20",
+  "price": 35.0,
+  "latitude": 51.583698,
+  "longitude": 4.797110,
+  "status": "PENDING",
+  "distanceTravelled": 0,
+  "score": 0
+}
+
+### Add Rental #11 - Vehicle 5 (Renter 3)
+POST http://localhost:8080/rentals
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJ1c2VycyIsImlzcyI6Imh0dHA6Ly8wLjAuMC4wOjgwODAiLCJleHAiOjE3MzU2NDYwNzUsInVzZXJJZCI6IjY1OTJhNzRjYTg0NjM3MDgxODhjNmEwMSJ9.5R4sPftZNT1PcjN8xLQ4FIQJGzimSKmnlhgE4CVzukw
+
+{
+  "vehicleId": "FILL_VEHICLE_5_Honda",
+  "userId": "FILL_RENTER_3",
+  "date": "2023-01-30",
+  "price": 48.0,
+  "latitude": 51.585720,
+  "longitude": 4.793230,
+  "status": "PENDING",
+  "distanceTravelled": 0,
+  "score": 0
+}
+
+### Add Rental #12 - Vehicle 5 (Renter 4)
+POST http://localhost:8080/rentals
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJ1c2VycyIsImlzcyI6Imh0dHA6Ly8wLjAuMC4wOjgwODAiLCJleHAiOjE3MzU2NDYwNzUsInVzZXJJZCI6IjY1OTJhNzRjYTg0NjM3MDgxODhjNmEwMSJ9.5R4sPftZNT1PcjN8xLQ4FIQJGzimSKmnlhgE4CVzukw
+
+{
+  "vehicleId": "FILL_VEHICLE_5_Honda",
+  "userId": "FILL_RENTER_4",
+  "date": "2022-12-09",
+  "price": 48.0,
+  "latitude": 51.585720,
+  "longitude": 4.793230,
+  "status": "APPROVED",
+  "distanceTravelled": 276,
+  "score": 2
+}
+
+### Add Rental #13 - Vehicle 6 (Renter 1)
+POST http://localhost:8080/rentals
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJ1c2VycyIsImlzcyI6Imh0dHA6Ly8wLjAuMC4wOjgwODAiLCJleHAiOjE3MzU2NDYwNzUsInVzZXJJZCI6IjY1OTJhNzRjYTg0NjM3MDgxODhjNmEwMSJ9.5R4sPftZNT1PcjN8xLQ4FIQJGzimSKmnlhgE4CVzukw
+
+{
+  "vehicleId": "FILL_VEHICLE_6_Ford",
+  "userId": "FILL_RENTER_1",
+  "date": "2022-12-19",
+  "price": 65.0,
+  "latitude": 51.58656,
+  "longitude": 4.77596,
+  "status": "APPROVED",
+  "distanceTravelled": 1363,
+  "score": 5
+}
+
+### Add Rental #14 - Vehicle 6 (Renter 2)
+POST http://localhost:8080/rentals
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJ1c2VycyIsImlzcyI6Imh0dHA6Ly8wLjAuMC4wOjgwODAiLCJleHAiOjE3MzU2NDYwNzUsInVzZXJJZCI6IjY1OTJhNzRjYTg0NjM3MDgxODhjNmEwMSJ9.5R4sPftZNT1PcjN8xLQ4FIQJGzimSKmnlhgE4CVzukw
+
+{
+  "vehicleId": "FILL_VEHICLE_6_Ford",
+  "userId": "FILL_RENTER_2",
+  "date": "2023-02-19",
+  "price": 65.0,
+  "latitude": 51.58656,
+  "longitude": 4.77596,
+  "status": "PENDING",
+  "distanceTravelled": 0,
+  "score": 0
+}
+
+### Add Rental #15 - Vehicle 7 (Renter 3)
+POST http://localhost:8080/rentals
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJ1c2VycyIsImlzcyI6Imh0dHA6Ly8wLjAuMC4wOjgwODAiLCJleHAiOjE3MzU2NDYwNzUsInVzZXJJZCI6IjY1OTJhNzRjYTg0NjM3MDgxODhjNmEwMSJ9.5R4sPftZNT1PcjN8xLQ4FIQJGzimSKmnlhgE4CVzukw
+
+{
+  "vehicleId": "FILL_VEHICLE_7_Chevrolet",
+  "userId": "FILL_RENTER_3",
+  "date": "2023-03-12",
+  "price": 75.0,
+  "latitude": 51.5794365,
+  "longitude": 4.810962,
+  "status": "PENDING",
+  "distanceTravelled": 0,
+  "score": 0
+}
+
+### Add Rental #16 - Vehicle 7 (Renter 4)
+POST http://localhost:8080/rentals
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJ1c2VycyIsImlzcyI6Imh0dHA6Ly8wLjAuMC4wOjgwODAiLCJleHAiOjE3MzU2NDYwNzUsInVzZXJJZCI6IjY1OTJhNzRjYTg0NjM3MDgxODhjNmEwMSJ9.5R4sPftZNT1PcjN8xLQ4FIQJGzimSKmnlhgE4CVzukw
+
+{
+  "vehicleId": "FILL_VEHICLE_7_Chevrolet",
+  "userId": "FILL_RENTER_4",
+  "date": "2023-03-25",
+  "price": 75.0,
+  "latitude": 51.5794365,
+  "longitude": 4.810962,
+  "status": "PENDING",
+  "distanceTravelled": 0,
+  "score": 0
+}
+
+### Add Rental #17 - Vehicle 8 (Renter 1)
+POST http://localhost:8080/rentals
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJ1c2VycyIsImlzcyI6Imh0dHA6Ly8wLjAuMC4wOjgwODAiLCJleHAiOjE3MzU2NDYwNzUsInVzZXJJZCI6IjY1OTJhNzRjYTg0NjM3MDgxODhjNmEwMSJ9.5R4sPftZNT1PcjN8xLQ4FIQJGzimSKmnlhgE4CVzukw
+
+{
+  "vehicleId": "FILL_VEHICLE_8_Buick",
+  "userId": "FILL_RENTER_1",
+  "date": "2023-02-02",
+  "price": 80.0,
+  "latitude": 51.577640,
+  "longitude": 4.787580,
+  "status": "PENDING",
+  "distanceTravelled": 0,
+  "score": 0
+}
+
+### Add Rental #18 - Vehicle 8 (Renter 2)
+POST http://localhost:8080/rentals
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJ1c2VycyIsImlzcyI6Imh0dHA6Ly8wLjAuMC4wOjgwODAiLCJleHAiOjE3MzU2NDYwNzUsInVzZXJJZCI6IjY1OTJhNzRjYTg0NjM3MDgxODhjNmEwMSJ9.5R4sPftZNT1PcjN8xLQ4FIQJGzimSKmnlhgE4CVzukw
+
+{
+  "vehicleId": "FILL_VEHICLE_8_Buick",
+  "userId": "FILL_RENTER_2",
+  "date": "2022-12-02",
+  "price": 80.0,
+  "latitude": 51.577640,
+  "longitude": 4.787580,
+  "status": "CANCELLED",
+  "distanceTravelled": 0,
+  "score": 0
+}
+
+### Add Rental #19 - Vehicle 9 (Renter 3)
+POST http://localhost:8080/rentals
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJ1c2VycyIsImlzcyI6Imh0dHA6Ly8wLjAuMC4wOjgwODAiLCJleHAiOjE3MzU2NDYwNzUsInVzZXJJZCI6IjY1OTJhNzRjYTg0NjM3MDgxODhjNmEwMSJ9.5R4sPftZNT1PcjN8xLQ4FIQJGzimSKmnlhgE4CVzukw
+
+{
+  "vehicleId": "FILL_VEHICLE_9_Mazda",
+  "userId": "FILL_RENTER_3",
+  "date": "2023-01-04",
+  "price": 70.0,
+  "latitude": 51.57947,
+  "longitude": 4.752594,
+  "status": "PENDING",
+  "distanceTravelled": 0,
+  "score": 0
+}
+
+### Add Rental #20 - Vehicle 9 (Renter 4)
+POST http://localhost:8080/rentals
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJ1c2VycyIsImlzcyI6Imh0dHA6Ly8wLjAuMC4wOjgwODAiLCJleHAiOjE3MzU2NDYwNzUsInVzZXJJZCI6IjY1OTJhNzRjYTg0NjM3MDgxODhjNmEwMSJ9.5R4sPftZNT1PcjN8xLQ4FIQJGzimSKmnlhgE4CVzukw
+
+{
+  "vehicleId": "FILL_VEHICLE_9_Mazda",
+  "userId": "FILL_RENTER_4",
+  "date": "2022-11-10",
+  "price": 70.0,
+  "latitude": 51.57947,
+  "longitude": 4.752594,
+  "status": "APPROVED",
+  "distanceTravelled": 673,
+  "score": 1
+}
+
+### Add Rental #21 - Vehicle 9 (Renter 1)
+POST http://localhost:8080/rentals
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJ1c2VycyIsImlzcyI6Imh0dHA6Ly8wLjAuMC4wOjgwODAiLCJleHAiOjE3MzU2NDYwNzUsInVzZXJJZCI6IjY1OTJhNzRjYTg0NjM3MDgxODhjNmEwMSJ9.5R4sPftZNT1PcjN8xLQ4FIQJGzimSKmnlhgE4CVzukw
+
+{
+  "vehicleId": "FILL_VEHICLE_9_Mazda",
+  "userId": "FILL_RENTER_1",
+  "date": "2023-04-13",
+  "price": 70.0,
+  "latitude": 51.57947,
+  "longitude": 4.752594,
+  "status": "APPROVED",
+  "distanceTravelled": 0,
+  "score": 0
+}
+
+### Add Rental #22 - Vehicle 10 (Renter 2)
+POST http://localhost:8080/rentals
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJ1c2VycyIsImlzcyI6Imh0dHA6Ly8wLjAuMC4wOjgwODAiLCJleHAiOjE3MzU2NDYwNzUsInVzZXJJZCI6IjY1OTJhNzRjYTg0NjM3MDgxODhjNmEwMSJ9.5R4sPftZNT1PcjN8xLQ4FIQJGzimSKmnlhgE4CVzukw
+
+{
+  "vehicleId": "FILL_VEHICLE_10_Raptor",
+  "userId": "FILL_RENTER_2",
+  "date": "2023-03-08",
+  "price": 80.0,
+  "latitude": 51.587839,
+  "longitude": 4.755652,
+  "status": "APPROVED",
+  "distanceTravelled": 0,
+  "score": 0
+}
+
+### Add Rental #23 - Vehicle 10 (Renter 3)
+POST http://localhost:8080/rentals
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJ1c2VycyIsImlzcyI6Imh0dHA6Ly8wLjAuMC4wOjgwODAiLCJleHAiOjE3MzU2NDYwNzUsInVzZXJJZCI6IjY1OTJhNzRjYTg0NjM3MDgxODhjNmEwMSJ9.5R4sPftZNT1PcjN8xLQ4FIQJGzimSKmnlhgE4CVzukw
+
+{
+  "vehicleId": "FILL_VEHICLE_10_Raptor",
+  "userId": "FILL_RENTER_3",
+  "date": "2023-03-08",
+  "price": 80.0,
+  "latitude": 51.587839,
+  "longitude": 4.755652,
+  "status": "CANCELLED",
+  "distanceTravelled": 0,
+  "score": 0
 }
 
 ###

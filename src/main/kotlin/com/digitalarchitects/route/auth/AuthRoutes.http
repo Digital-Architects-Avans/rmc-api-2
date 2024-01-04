@@ -5,24 +5,143 @@ Content-Type: application/json
   "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJ1c2VycyIsImlzcyI6Imh0dHA6Ly8wLjAuMC4wOjgwODAiLCJleHAiOjE3MzU3NDY5MjQsInVzZXJJZCI6IjY1OTM1MTM0NThmNTlkMzA1ZjJmYTEzMSJ9.7rbSDhmNAp5SJB0fh6hMq3zxWlZTRVubRUFV8OhXYdc"
 }
 
-###
+### Add Owner #1
 POST http://localhost:8080/signup
 Content-Type: application/json
 
 {
-  "email": "email@email.com",
+  "email": "owner1@example.com",
   "password": "password",
   "userType": "CLIENT",
-  "firstName": "John",
-  "lastName": "Doe",
-  "phone": "123456789",
-  "street": "Test Street",
-  "buildingNumber": "1",
-  "zipCode": "12-345",
-  "city": "Test City"
+  "firstName": "Emma",
+  "lastName": "de Jong",
+  "phone": "0642748593",
+  "street": "Rietsemalaan",
+  "buildingNumber": "14",
+  "zipCode": "4817 KX",
+  "city": "Breda"
 }
-###
 
+### Add Owner #2
+POST http://localhost:8080/signup
+Content-Type: application/json
+
+{
+  "email": "owner2@example.com",
+  "password": "password",
+  "userType": "CLIENT",
+  "firstName": "Noah",
+  "lastName": "Jansen",
+  "phone": "0694738274",
+  "street": "Julianalaan",
+  "buildingNumber": "9",
+  "zipCode": "4819 AB",
+  "city": "Breda"
+}
+
+### Add Owner #3
+POST http://localhost:8080/signup
+Content-Type: application/json
+
+{
+  "email": "owner3@example.com",
+  "password": "password",
+  "userType": "CLIENT",
+  "firstName": "Julia",
+  "lastName": "de Vries",
+  "phone": "0637462845",
+  "street": "Zandberglaan",
+  "buildingNumber": "15",
+  "zipCode": "4818 GH",
+  "city": "Breda"
+}
+
+### Add Owner #4
+POST http://localhost:8080/signup
+Content-Type: application/json
+
+{
+  "email": "owner4@example.com",
+  "password": "password",
+  "userType": "CLIENT",
+  "firstName": "Luca",
+  "lastName": "Bakker",
+  "phone": "0682123174",
+  "street": "Plataanstraat",
+  "buildingNumber": "82",
+  "zipCode": "4814 LE",
+  "city": "Breda"
+}
+
+### Add Renter #1
+POST http://localhost:8080/signup
+Content-Type: application/json
+
+{
+  "email": "renter1@example.com",
+  "password": "password",
+  "userType": "CLIENT",
+  "firstName": "Lucas",
+  "lastName": "Mertens",
+  "phone": "0658364852",
+  "street": "Turnhoutstraat",
+  "buildingNumber": "8",
+  "zipCode": "4826 KD",
+  "city": "Breda"
+}
+
+### Add Renter #2
+POST http://localhost:8080/signup
+Content-Type: application/json
+
+{
+  "email": "renter2@example.com",
+  "password": "password",
+  "userType": "CLIENT",
+  "firstName": "Olivia",
+  "lastName": "Janssens",
+  "phone": "0653417856",
+  "street": "Koekoekstraat",
+  "buildingNumber": "23",
+  "zipCode": "4815 AN",
+  "city": "Breda"
+}
+
+### Add Renter #3
+POST http://localhost:8080/signup
+Content-Type: application/json
+
+{
+  "email": "renter3@example.com",
+  "password": "password",
+  "userType": "CLIENT",
+  "firstName": "Yara",
+  "lastName": "Visser",
+  "phone": "0685721462",
+  "street": "Baronielaan 192",
+  "buildingNumber": "192",
+  "zipCode": "4837 BG",
+  "city": "Breda"
+}
+
+### Add Renter #4
+POST http://localhost:8080/signup
+Content-Type: application/json
+
+{
+  "email": "renter4@example.com",
+  "password": "password",
+  "userType": "CLIENT",
+  "firstName": "James",
+  "lastName": "van Dijk",
+  "phone": "0637539568",
+  "street": "Loevesteinstraat",
+  "buildingNumber": "20",
+  "zipCode": "4834 ED",
+  "city": "Breda"
+}
+
+###
 POST http://localhost:8080/signin
 Content-Type: application/json
 
@@ -30,16 +149,13 @@ Content-Type: application/json
   "email": "testemail2@email.com",
   "password": "password"
 }
-###
 
+###
 GET http://localhost:8080/authenticate
 Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJ1c2VycyIsImlzcyI6Imh0dHA6Ly8wLjAuMC4wOjgwODAiLCJleHAiOjE3MzU2NDYwNzUsInVzZXJJZCI6IjY1OTJhNzRjYTg0NjM3MDgxODhjNmEwMSJ9.5R4sPftZNT1PcjN8xLQ4FIQJGzimSKmnlhgE4CVzukw
-###
 
+###
 GET http://localhost:8080/secret
 Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJ1c2VycyIsImlzcyI6Imh0dHA6Ly8wLjAuMC4wOjgwODAiLCJleHAiOjE3MzU3NDY5MjQsInVzZXJJZCI6IjY1OTM1MTM0NThmNTlkMzA1ZjJmYTEzMSJ9.7rbSDhmNAp5SJB0fh6hMq3zxWlZTRVubRUFV8OhXYdc
-###
-
-
