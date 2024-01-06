@@ -2,6 +2,7 @@ package com.digitalarchitects.data.rental
 
 import com.digitalarchitects.data.requests.UpdateRentalRequest
 import com.digitalarchitects.data.user.User
+import com.digitalarchitects.data.vehicle.Vehicle
 import org.bson.types.ObjectId
 import org.litote.kmongo.Id
 import org.litote.kmongo.coroutine.CoroutineDatabase
@@ -54,8 +55,16 @@ class MongoRentalDataSource(
     }
 
     override suspend fun deleteRentalById(rentalId: String): Boolean {
-        val rentalIdAsId: Id<User> = ObjectId(rentalId).toId()
-        return rentals.deleteOneById(rentalIdAsId).wasAcknowledged()
+        try {
+            val rentalIdAsId: Id<Rental> = ObjectId(rentalId).toId()
+            val result = rentals.deleteOne(Rental::rentalId eq rentalId)
+            println("Deleting rental with userId $rentalId, rentalIdAsId $rentalIdAsId, result $result")
+            return result.wasAcknowledged()
+        } catch (e: Exception) {
+            // Log the exception or print its details
+            println("Error deleting rental with ID $rentalId: ${e.message}")
+            return false
+        }
     }
 
 }

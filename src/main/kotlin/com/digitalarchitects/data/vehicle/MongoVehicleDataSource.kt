@@ -54,7 +54,15 @@ class MongoVehicleDataSource(
     }
 
     override suspend fun deleteVehicleById(vehicleId: String): Boolean {
-        val vehicleIdAsId: Id<User> = ObjectId(vehicleId).toId()
-        return vehicles.deleteOneById(vehicleIdAsId).wasAcknowledged()
+        try {
+            val vehicleIdAsId: Id<Vehicle> = ObjectId(vehicleId).toId()
+            val result = vehicles.deleteOne(Vehicle::vehicleId eq vehicleId)
+            println("Deleting vehicle with vehicleId $vehicleId, vehicleIdAsId $vehicleIdAsId, result $result")
+            return result.wasAcknowledged()
+        } catch (e: Exception) {
+            // Log the exception or print its details
+            println("Error deleting vehicle with ID $vehicleId: ${e.message}")
+            return false
+        }
     }
 }

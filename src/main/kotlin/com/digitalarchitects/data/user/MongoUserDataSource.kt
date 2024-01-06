@@ -1,6 +1,7 @@
 package com.digitalarchitects.data.user
 
 import com.digitalarchitects.data.requests.UpdateUserRequest
+import com.digitalarchitects.data.vehicle.Vehicle
 import org.bson.types.ObjectId
 import org.litote.kmongo.Id
 import org.litote.kmongo.coroutine.CoroutineDatabase
@@ -51,7 +52,15 @@ class MongoUserDataSource(
     }
 
     override suspend fun deleteUserById(userId: String): Boolean {
-        val userIdAsId: Id<User> = ObjectId(userId).toId()
-        return users.deleteOneById(userIdAsId).wasAcknowledged()
+        try {
+            val userIdAsId: Id<User> = ObjectId(userId).toId()
+            val result = users.deleteOne(User::userId eq userId)
+            println("Deleting user with userId $userId, userIdAsId $userIdAsId, result $result")
+            return result.wasAcknowledged()
+        } catch (e: Exception) {
+            // Log the exception or print its details
+            println("Error deleting user with ID $userId: ${e.message}")
+            return false
+        }
     }
 }
