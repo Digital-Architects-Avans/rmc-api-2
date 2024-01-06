@@ -33,6 +33,7 @@ class MongoUserDataSource(
         val user = getUserById(userId) ?: return false
 
         val updatedDocument = user.copy(
+            email = updatedUser.email,
             password = updatedUser.password,
             userType = updatedUser.userType,
             firstName = updatedUser.firstName,
