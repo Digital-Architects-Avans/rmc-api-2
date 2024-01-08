@@ -54,6 +54,19 @@ class MongoRentalDataSource(
         return updateResult.wasAcknowledged()
     }
 
+    override suspend fun setRentalStatus(rentalId: String, status: RentalStatus): Boolean {
+        val rental = getRentalById(rentalId) ?: return false
+
+        val updatedDocument = rental.copy(
+            status = status
+        )
+
+        val updateResult = rentals.replaceOne(Rental::rentalId eq rentalId, updatedDocument)
+
+        return updateResult.wasAcknowledged()
+    }
+
+
     override suspend fun deleteRentalById(rentalId: String): Boolean {
         try {
             val rentalIdAsId: Id<Rental> = ObjectId(rentalId).toId()

@@ -10,5 +10,6 @@ interface RentalDataSource {
     suspend fun getRentals(): List<Rental>
     suspend fun getRentalById(rentalId: String): Rental?
     suspend fun updateRental(rentalId: String, updatedRental: UpdateRentalRequest): Boolean
+    suspend fun setRentalStatus(rentalId: String, status: RentalStatus): Boolean
     suspend fun deleteRentalById(rentalId: String): Boolean
 }

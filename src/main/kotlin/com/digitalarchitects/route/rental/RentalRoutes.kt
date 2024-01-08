@@ -4,6 +4,7 @@ import com.digitalarchitects.data.rental.Rental
 import com.digitalarchitects.data.rental.RentalDataSource
 import com.digitalarchitects.data.rental.RentalStatus
 import com.digitalarchitects.data.requests.CreateRentalRequest
+import com.digitalarchitects.data.requests.UpdateRentalRequest
 import io.ktor.http.*
 import io.ktor.server.application.*
 import io.ktor.server.auth.*
@@ -116,6 +117,60 @@ fun Route.rentalRoutes(
                 call.respondText("An error occurred: $e", status = HttpStatusCode.InternalServerError)
             }
         }
+
+        put("/rentals/{rentalId}") {
+            val rentalId = call.parameters["rentalId"] ?: run {
+                call.respondText("Invalid rentalId", status = HttpStatusCode.BadRequest)
+                return@put
+            }
+
+            try {
+                val updatedRental = call.receive<UpdateRentalRequest>()
+                val rentalIsUpdated = rentalDataSource.updateRental(rentalId, updatedRental)
+
+                if (rentalIsUpdated) {
+                    call.respondText("Vehicle updated successfully", status = HttpStatusCode.OK)
+                } else {
+                    call.respondText("Rental with id: $rentalId not found", status = HttpStatusCode.NotFound)
+                }
+
+            } catch (e: Exception) {
+                call.respondText("An error occurred: $e", status = HttpStatusCode.InternalServerError)
+            }
+        }
+
+        get("/rentals/{rentalId}/{status}") {
+            val rentalId = call.parameters["rentalId"] ?: run {
+                call.respondText("Invalid rentalId", status = HttpStatusCode.BadRequest)
+                return@get
+            }
+
+            val status = call.parameters["status"] ?: run {
+                call.respondText("Invalid status", status = HttpStatusCode.BadRequest)
+                return@get
+            }
+
+            try {
+                val rentalStatus = RentalStatus.valueOf(status)
+                if (rentalStatus !in RentalStatus.entries.toTypedArray()) {
+                    call.respondText("Invalid rental status", status = HttpStatusCode.BadRequest)
+                    return@get
+                }
+
+                val statusIsUpdated = rentalDataSource.setRentalStatus(rentalId, rentalStatus)
+
+                if (statusIsUpdated) {
+                    call.respondText("Vehicle status successfully updated to $status", status = HttpStatusCode.OK)
+                } else {
+                    call.respondText("Failed to update rental status", status = HttpStatusCode.InternalServerError)
+                }
+            } catch (e: IllegalArgumentException) {
+                call.respondText("Invalid rental status", status = HttpStatusCode.BadRequest)
+            } catch (e: Exception) {
+                call.respondText("An error occurred: $e", status = HttpStatusCode.InternalServerError)
+            }
+        }
+
 
         delete("/rentals/{id}") {
             val id = call.parameters["id"] ?: run {
