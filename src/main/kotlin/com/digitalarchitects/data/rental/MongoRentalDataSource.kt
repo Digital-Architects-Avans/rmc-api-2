@@ -1,13 +1,14 @@
 package com.digitalarchitects.data.rental
 
 import com.digitalarchitects.data.requests.UpdateRentalRequest
-import com.digitalarchitects.data.user.User
-import com.digitalarchitects.data.vehicle.Vehicle
+import com.mongodb.client.model.Filters.*
+import com.mongodb.client.model.Updates.set
 import kotlinx.datetime.Clock
 import kotlinx.datetime.TimeZone
 import kotlinx.datetime.toLocalDateTime
 import org.bson.types.ObjectId
 import org.litote.kmongo.Id
+import org.litote.kmongo.coroutine.CoroutineCollection
 import org.litote.kmongo.coroutine.CoroutineDatabase
 import org.litote.kmongo.eq
 import org.litote.kmongo.id.toId
@@ -30,21 +31,23 @@ class MongoRentalDataSource(
     }
 
     override suspend fun getRentals(): List<Rental> {
-        val rentalList = rentals.find().toList()
-        checkRentalDataForExpiration(rentalList)
+        checkRentalDataForExpiration()
         return rentals.find().toList()
     }
 
-    private suspend fun checkRentalDataForExpiration(rentals: List<Rental>) {
+    private suspend fun checkRentalDataForExpiration() {
         val today = Clock.System.now().toLocalDateTime(
             TimeZone.currentSystemDefault()
         ).date
 
-        rentals.forEach { rental ->
-            if (rental.date < today) {
-                setRentalStatus(rental.rentalId, RentalStatus.CANCELLED)
-            }
-        }
+        val filter = and(
+            eq("status", RentalStatus.PENDING),
+            lt("date", today)
+        )
+
+        val update = set("status", RentalStatus.CANCELLED)
+
+        rentals.updateMany(filter, update)
     }
 
     override suspend fun getRentalById(rentalId: String): Rental? {
