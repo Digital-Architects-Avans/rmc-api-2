@@ -15,21 +15,21 @@ A Kotlin REST API with the Ktor & KMongdoDB frameworks
 
 ## Introduction
 
-Our project is a modern and user-friendly mobile application built using the Ktor framework with the Exposed DAO API for seamless data persistence. Designed to serve the needs of people seeking quick and hassle-free car rental services, as well as those who wish to make their vehicles available for rent, this Android app employs the power of Jetpack Compose for an elegant and intuitive user interface.
+Our project is a modern and user-friendly mobile application built using the Ktor framework with the KMongoDB database for seamless data persistence. Designed to serve the needs of people seeking quick and hassle-free car rental services, as well as those who wish to make their vehicles available for rent, this Android app employs the power of Jetpack Compose for an elegant and intuitive user interface.
 
 ## Getting Started
 
 A brief set of instructions on how to set up and run the project locally:
 
 1. GitHub RMC API project repository:
-- Visit the GitHub repository at https://github.com/Digital-Architects-Avans/rmc-api.
+- Visit the GitHub repository at https://github.com/Digital-Architects-Avans/rmc-api-2.
 
 2. Download and Unzip the Project:
 - Download the project repository and unzip the folder to your local machine.
 
 3. Open the Project in IntelliJ IDEA:
 - Launch IntelliJ IDEA by JetBrains.
-- Open the unzipped "rmc-api-master" folder as a project.
+- Open the unzipped "rmc-api-2-master" folder as a project.
 
 4. Start the Application:
 - Ensure that your development environment is set up and all dependencies are loaded.
