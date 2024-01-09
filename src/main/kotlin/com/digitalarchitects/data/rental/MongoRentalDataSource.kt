@@ -3,6 +3,9 @@ package com.digitalarchitects.data.rental
 import com.digitalarchitects.data.requests.UpdateRentalRequest
 import com.digitalarchitects.data.user.User
 import com.digitalarchitects.data.vehicle.Vehicle
+import kotlinx.datetime.Clock
+import kotlinx.datetime.TimeZone
+import kotlinx.datetime.toLocalDateTime
 import org.bson.types.ObjectId
 import org.litote.kmongo.Id
 import org.litote.kmongo.coroutine.CoroutineDatabase
@@ -27,7 +30,21 @@ class MongoRentalDataSource(
     }
 
     override suspend fun getRentals(): List<Rental> {
+        val rentalList = rentals.find().toList()
+        checkRentalDataForExpiration(rentalList)
         return rentals.find().toList()
+    }
+
+    private suspend fun checkRentalDataForExpiration(rentals: List<Rental>) {
+        val today = Clock.System.now().toLocalDateTime(
+            TimeZone.currentSystemDefault()
+        ).date
+
+        rentals.forEach { rental ->
+            if (rental.date < today) {
+                setRentalStatus(rental.rentalId, RentalStatus.CANCELLED)
+            }
+        }
     }
 
     override suspend fun getRentalById(rentalId: String): Rental? {
