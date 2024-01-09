@@ -5,6 +5,9 @@ import com.digitalarchitects.data.rental.RentalDataSource
 import com.digitalarchitects.data.rental.RentalStatus
 import com.digitalarchitects.data.requests.CreateRentalRequest
 import com.digitalarchitects.data.requests.UpdateRentalRequest
+import com.digitalarchitects.data.user.MongoUserDataSource
+import com.digitalarchitects.data.user.UserDataSource
+import com.digitalarchitects.data.vehicle.VehicleDataSource
 import io.ktor.http.*
 import io.ktor.server.application.*
 import io.ktor.server.auth.*
@@ -13,7 +16,9 @@ import io.ktor.server.response.*
 import io.ktor.server.routing.*
 
 fun Route.rentalRoutes(
-    rentalDataSource: RentalDataSource
+    userDataSource: UserDataSource,
+    rentalDataSource: RentalDataSource,
+    vehicleDataSource: VehicleDataSource
 ) {
     authenticate {
         get("/rentals") {
@@ -94,6 +99,20 @@ fun Route.rentalRoutes(
                     return@post
                 }
 
+                // Check if the user exists in the database
+                val user = userDataSource.getUserById(request.userId)
+                if (user == null) {
+                    call.respondText("User does not exist in the database", status = HttpStatusCode.BadRequest)
+                    return@post
+                }
+
+                // Check if the vehicle exists in the database
+                val vehicle = vehicleDataSource.getVehicleById(request.vehicleId)
+                if (vehicle == null) {
+                    call.respondText("Vehicle does not exist in the database", status = HttpStatusCode.BadRequest)
+                    return@post
+                }
+
                 val rental = Rental(
                     vehicleId = request.vehicleId,
                     userId = request.userId,
@@ -126,6 +145,19 @@ fun Route.rentalRoutes(
 
             try {
                 val updatedRental = call.receive<UpdateRentalRequest>()
+
+                // Check if the user exists in the database
+                val user = userDataSource.getUserById(updatedRental.userId)
+                if (user == null) {
+                    call.respondText("User does not exist in the database", status = HttpStatusCode.BadRequest)
+                }
+
+                // Check if the vehicle exists in the database
+                val vehicle = vehicleDataSource.getVehicleById(updatedRental.vehicleId)
+                if (vehicle == null) {
+                    call.respondText("Vehicle does not exist in the database", status = HttpStatusCode.BadRequest)
+                }
+
                 val rentalIsUpdated = rentalDataSource.updateRental(rentalId, updatedRental)
 
                 if (rentalIsUpdated) {

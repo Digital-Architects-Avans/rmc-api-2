@@ -25,6 +25,6 @@ fun Application.configureRouting(
         authRoutes(userDataSource, hashingService, tokenService, tokenConfig)
         userRoutes(userDataSource)
         vehicleRoutes(vehicleDataSource)
-        rentalRoutes(rentalDataSource)
+        rentalRoutes(userDataSource, rentalDataSource, vehicleDataSource)
     }
 }

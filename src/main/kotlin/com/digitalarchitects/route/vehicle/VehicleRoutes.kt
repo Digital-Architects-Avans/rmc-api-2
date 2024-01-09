@@ -2,6 +2,7 @@ package com.digitalarchitects.route.vehicle
 
 import com.digitalarchitects.data.requests.CreateVehicleRequest
 import com.digitalarchitects.data.requests.UpdateVehicleRequest
+import com.digitalarchitects.data.user.UserDataSource
 import com.digitalarchitects.data.vehicle.Vehicle
 import com.digitalarchitects.data.vehicle.VehicleDataSource
 import io.ktor.http.*
@@ -13,6 +14,7 @@ import io.ktor.server.routing.*
 import java.lang.reflect.InvocationTargetException
 
 fun Route.vehicleRoutes(
+    userDataSource: UserDataSource,
     vehicleDataSource: VehicleDataSource
 ) {
     authenticate {
@@ -71,6 +73,13 @@ fun Route.vehicleRoutes(
                     return@post
                 }
 
+                // Check if the user exists in the database
+                val user = userDataSource.getUserById(request.userId)
+                if (user == null) {
+                    call.respondText("User does not exist in the database", status = HttpStatusCode.BadRequest)
+                    return@post
+                }
+
                 if (vehicleDataSource.getVehicleByLicensePlate(request.licensePlate) != null) {
                     call.respond(
                         HttpStatusCode.Conflict,
@@ -118,6 +127,12 @@ fun Route.vehicleRoutes(
 
             try {
                 val updateVehicleRequest = call.receive<UpdateVehicleRequest>()
+
+                // Check if the user exists in the database
+                val user = userDataSource.getUserById(updateVehicleRequest.userId)
+                if (user == null) {
+                    call.respondText("User does not exist in the database", status = HttpStatusCode.BadRequest)
+                }
 
                 val updated = vehicleDataSource.updateVehicle(id, updateVehicleRequest)
 
