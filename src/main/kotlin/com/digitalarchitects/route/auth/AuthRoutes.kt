@@ -57,13 +57,16 @@ fun Route.authRoutes(
             zipCode = request.zipCode,
             city = request.city
         )
-        val wasAcknowledged = userDataSource.insertUser(user)
-        if (!wasAcknowledged) {
-            call.respond(HttpStatusCode.Conflict, "User already exists")
-            return@post
+        val userId = userDataSource.insertUser(user)
+        if (userId != null) {
+            userDataSource.getUserById(userId)?.let { response ->
+                call.respond(HttpStatusCode.Created, response)
+            } ?: run {
+                call.respondText("Failed to insert rental", status = HttpStatusCode.InternalServerError)
+            }
         }
-
-        call.respond(HttpStatusCode.Created)
+        call.respond(HttpStatusCode.Conflict, "User already exists")
+        return@post
     }
 
     post("/signin") {

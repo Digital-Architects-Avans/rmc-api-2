@@ -103,10 +103,10 @@ fun Route.vehicleRoutes(
                     availability = request.availability
                 )
 
-                val inserted = vehicleDataSource.insertVehicle(vehicle)
+                val vehicleId  = vehicleDataSource.insertVehicle(vehicle)
 
-                if (inserted) {
-                    vehicleDataSource.getVehicleByLicensePlate(vehicle.licensePlate)?.let { response ->
+                if (vehicleId != null) {
+                    vehicleDataSource.getVehicleById(vehicleId)?.let { response ->
                         call.respond(HttpStatusCode.Created, response)
                     } ?: run {
                         call.respondText("Failed to insert vehicle", status = HttpStatusCode.InternalServerError)

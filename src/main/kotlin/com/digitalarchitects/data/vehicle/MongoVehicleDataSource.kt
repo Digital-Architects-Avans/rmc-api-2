@@ -18,8 +18,13 @@ class MongoVehicleDataSource(
         return vehicles.findOne(Vehicle::licensePlate eq licensePlate)
     }
 
-    override suspend fun insertVehicle(vehicle: Vehicle): Boolean {
-        return vehicles.insertOne(vehicle).wasAcknowledged()
+    override suspend fun insertVehicle(vehicle: Vehicle): String? {
+        val result = vehicles.insertOne(vehicle)
+        return if (result.wasAcknowledged()) {
+            vehicle.vehicleId
+        } else {
+            null
+        }
     }
 
     override suspend fun getVehicles(): List<Vehicle> {

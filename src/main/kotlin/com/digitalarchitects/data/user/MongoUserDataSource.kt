@@ -18,8 +18,13 @@ class MongoUserDataSource(
         return users.findOne(User::email eq email)
     }
 
-    override suspend fun insertUser(user: User): Boolean {
-        return users.insertOne(user).wasAcknowledged()
+    override suspend fun insertUser(user: User): String? {
+        val result = users.insertOne(user)
+        return if (result.wasAcknowledged()) {
+            user.userId
+        } else {
+            null
+        }
     }
 
     override suspend fun getUsers(): List<User> {

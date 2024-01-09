@@ -26,8 +26,13 @@ class MongoRentalDataSource(
         return rentals.find(Rental::userId eq userId).toList()
     }
 
-    override suspend fun insertRental(rental: Rental): Boolean {
-        return rentals.insertOne(rental).wasAcknowledged()
+    override suspend fun insertRental(rental: Rental): String? {
+        val result = rentals.insertOne(rental)
+        return if (result.wasAcknowledged()) {
+            rental.rentalId
+        } else {
+            null
+        }
     }
 
     override suspend fun getRentals(): List<Rental> {

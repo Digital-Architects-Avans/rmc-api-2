@@ -125,10 +125,14 @@ fun Route.rentalRoutes(
                     score = request.score
                 )
 
-                val inserted = rentalDataSource.insertRental(rental)
+                val rentalId  = rentalDataSource.insertRental(rental)
 
-                if (inserted) {
-                    call.respondText("Rental inserted successfully", status = HttpStatusCode.Created)
+                if (rentalId != null) {
+                    rentalDataSource.getRentalById(rentalId)?.let { response ->
+                        call.respond(HttpStatusCode.Created, response)
+                    } ?: run {
+                        call.respondText("Failed to insert rental", status = HttpStatusCode.InternalServerError)
+                    }
                 } else {
                     call.respondText("Failed to insert rental", status = HttpStatusCode.InternalServerError)
                 }
