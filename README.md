@@ -208,7 +208,7 @@ In the "route" directory, you can find routes and endpoints organized by routing
 
 We welcome contributions from the community to help improve our project. You can contribute in various ways:
 
-- **Bug Reports**: If you come across any issues or bugs, please report them on our [GitHub repository](https://github.com/Digital-Architects-Avans/rmc-api). Be sure to provide detailed information about the problem, including steps to reproduce it.
+- **Bug Reports**: If you come across any issues or bugs, please report them on our [GitHub repository](https://github.com/Digital-Architects-Avans/rmc-api-2). Be sure to provide detailed information about the problem, including steps to reproduce it.
 
 - **Feature Requests**: If you have ideas for new features or enhancements, we'd love to hear them. Open an issue on GitHub with a clear description of the feature you're suggesting.
 
