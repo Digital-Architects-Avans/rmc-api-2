@@ -42,7 +42,11 @@ A brief set of instructions on how to set up and run the project locally:
 
 ## Usage
 
-Below is an example of a usecase that employs some of the endpoints provided by this web API:
+
+### KMongoDB cloud database access:
+This API establishes a connection with a KMongoDB Atlast database running in the cloud. For utilizing the MongoDB Atlas database associated with the this API, you must have network access to the project. Teachers seeking access privileges can contact any of the project group students.
+
+Below are some examples of usecases that employ some of the endpoints provided by this web API:
 
 1. **Endpoint 1**
    - Description: This endpoint registers a new account for a user.
