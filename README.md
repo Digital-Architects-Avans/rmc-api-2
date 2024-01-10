@@ -21,30 +21,29 @@ Our project is a modern and user-friendly mobile application built using the Kto
 
 A brief set of instructions on how to set up and run the project locally:
 
-1. GitHub RMC API project repository:
+1. **MongoDB Atlas access:**
+- This API establishes a connection with a KMongoDB Atlast database running in the cloud. For utilizing the MongoDB Atlas database associated with the this API, you must have network access to the project. Teachers seeking access privileges can contact any of the project group students.
+   
+2. **GitHub RMC API project repository:**
 - Visit the GitHub repository at https://github.com/Digital-Architects-Avans/rmc-api-2.
 
-2. Download and Unzip the Project:
+3. **Download and Unzip the Project:**
 - Download the project repository and unzip the folder to your local machine.
 
-3. Open the Project in IntelliJ IDEA:
+4. **Open the Project in IntelliJ IDEA:**
 - Launch IntelliJ IDEA by JetBrains.
 - Open the unzipped "rmc-api-2-master" folder as a project.
 
-4. Start the Application:
+5. **Start the Application:**
 - Ensure that your development environment is set up and all dependencies are loaded.
 - Start the application by running the main() function located in the "Application.kt" file.
 
-6. Explore Predefined HTTP Requests:
+6. **Explore Predefined HTTP Requests:**
 - Once the application is running, you can explore predefined HTTP requests for various entity types, including Rental, User, and Vehicle.
 - Find these requests in the route map, organized within subdirectories for each entity type.
 - Look for the corresponding "<Type>Requests.http" file in the respective subdirectory for examples of predefined HTTP requests.
 
 ## Usage
-
-
-### KMongoDB cloud database access:
-This API establishes a connection with a KMongoDB Atlast database running in the cloud. For utilizing the MongoDB Atlas database associated with the this API, you must have network access to the project. Teachers seeking access privileges can contact any of the project group students.
 
 Below are some examples of usecases that employ some of the endpoints provided by this web API:
 
