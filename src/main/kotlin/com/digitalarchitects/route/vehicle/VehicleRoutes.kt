@@ -97,6 +97,8 @@ fun Route.vehicleRoutes(
                     engineType = request.engineType,
                     licensePlate = request.licensePlate,
                     imgLink = request.imgLink,
+                    description = request.description,
+                    address = request.address,
                     latitude = request.latitude,
                     longitude = request.longitude,
                     price = request.price,

@@ -47,6 +47,8 @@ class MongoVehicleDataSource(
             engineType = updatedVehicle.engineType,
             licensePlate = updatedVehicle.licensePlate,
             imgLink = updatedVehicle.imgLink,
+            description = updatedVehicle.description,
+            address = updatedVehicle.address,
             latitude = updatedVehicle.latitude,
             longitude = updatedVehicle.longitude,
             price = updatedVehicle.price,

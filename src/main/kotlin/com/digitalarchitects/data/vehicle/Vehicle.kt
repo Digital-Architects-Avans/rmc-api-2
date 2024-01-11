@@ -22,6 +22,8 @@ data class Vehicle(
     val engineType: EngineType,
     val licensePlate: String,
     val imgLink: Int,
+    val description: String,
+    val address: String,
     val latitude: Float,
     val longitude: Float,
     val price: Double,
