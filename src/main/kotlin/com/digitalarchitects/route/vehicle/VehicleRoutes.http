@@ -136,18 +136,20 @@ Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJ1c2VycyIsImlzcyI6Imh0dHA6Ly8wLjAuMC4wOjgwODAiLCJleHAiOjE3MzU2NDYwNzUsInVzZXJJZCI6IjY1OTJhNzRjYTg0NjM3MDgxODhjNmEwMSJ9.5R4sPftZNT1PcjN8xLQ4FIQJGzimSKmnlhgE4CVzukw
 
 {
-"userId": "FILL_USER_3",
-"brand": "Chevrolet",
-"model": "Malibu",
-"year": 1980,
-"vehicleClass": "Executive",
-"engineType": "ICE",
-"licensePlate": "GK-19-NP",
-"imgLink": 1, "description": "Drive in comfort and style with the Chevrolet Malibu, a perfect blend of elegance and performance.", "address": "Heilaarstraat, 4814 NR Breda, Netherlands",
-"latitude": 51.5794365,
-"longitude": 4.810962,
-"price": 75,
-"availability": true
+  "userId": "FILL_USER_3",
+  "brand": "Chevrolet",
+  "model": "Malibu",
+  "year": 1980,
+  "vehicleClass": "Executive",
+  "engineType": "ICE",
+  "licensePlate": "GK-19-NP",
+  "imgLink": 1,
+  "description": "Drive in comfort and style with the Chevrolet Malibu, a perfect blend of elegance and performance.",
+  "address": "Heilaarstraat, 4814 NR Breda, Netherlands",
+  "latitude": 51.5794365,
+  "longitude": 4.810962,
+  "price": 75,
+  "availability": true
 }
 
 ### Add Vehicle #8 for Owner 3
