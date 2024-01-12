@@ -16,5 +16,7 @@ data class CreateVehicleRequest(
     val latitude: Float,
     val longitude: Float,
     val price: Double,
-    val availability: Boolean
+    val availability: Boolean,
+    val address: String,
+    val description: String
 )
