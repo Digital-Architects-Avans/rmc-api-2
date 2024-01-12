@@ -15,7 +15,9 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJ1c2VycyIsI
   "latitude": 51.592470,
   "longitude": 4.793560,
   "price": 125,
-  "availability": true
+  "availability": true,
+  "address": "Tuinbouwlaan 39, 4817 LE Breda, Netherlands",
+  "description": "Explore the city in style with our luxurious BMW X5, combining performance and sophistication for an unforgettable driving experience."
 }
 
 ### Add Vehicle #2 for Owner 1
@@ -35,7 +37,9 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJ1c2VycyIsI
   "latitude": 51.592610,
   "longitude": 4.791830,
   "price": 199,
-  "availability": true
+  "availability": true,
+  "address": "Rietsemalaan 2, 4817 KX Breda, Netherlands",
+  "description": "Get a real feel for power."
 }
 
 ### Add Vehicle #3 for Owner 1
@@ -55,7 +59,9 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJ1c2VycyIsI
   "latitude": 51.589241,
   "longitude": 4.786490,
   "price": 145,
-  "availability": false
+  "availability": false,
+  "address": "Chasséveld 17, 4811 DH Breda, Netherlands",
+  "description": "Rent this sleek Tesla Roadster for a thrilling driving experience!"
 }
 
 ### Add Vehicle #4 for Owner 2
@@ -75,7 +81,9 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJ1c2VycyIsI
   "latitude": 51.583698,
   "longitude": 4.797110,
   "price": 35,
-  "availability": true
+  "availability": true,
+  "address": "Hogeschoollaan 1, 4818 CR Breda, Netherlands",
+  "description": "Efficient and reliable car for a comfortable commute."
 }
 
 ### Add Vehicle #5 for Owner 2
@@ -95,7 +103,9 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJ1c2VycyIsI
   "latitude": 51.585720,
   "longitude": 4.793230,
   "price": 48,
-  "availability": true
+  "availability": true,
+  "address": "Lovensdijkstraat 61, 4818 AJ Breda, Netherlands",
+  "description": "A modern Civic, ideal for long distances."
 }
 
 ### Add Vehicle #6 for Owner 2
@@ -115,7 +125,9 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJ1c2VycyIsI
   "latitude": 51.58656,
   "longitude": 4.77596,
   "price": 65,
-  "availability": false
+  "availability": false,
+  "address": "Eindstraat 18, 4811 KL Breda, Netherlands",
+  "description": "A reliable car for a weekend away."
 }
 
 ### Add Vehicle #7 for Owner 3
@@ -135,7 +147,9 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJ1c2VycyIsI
 "latitude": 51.5794365,
 "longitude": 4.810962,
 "price": 75,
-"availability": true
+"availability": true,
+  "address": "Beukenlaan 1, 4854 TA Bavel, Netherlands",
+  "description": "Drive in comfort and style with the Chevrolet Malibu, a perfect blend of elegance and performance."
 }
 
 ### Add Vehicle #8 for Owner 3
@@ -155,7 +169,9 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJ1c2VycyIsI
   "latitude": 51.577640,
   "longitude": 4.787580,
   "price": 80,
-  "availability": true
+  "availability": true,
+  "address": "Zandberglaan 48, 4818 GL Breda, Netherlands",
+  "description": "Cruise back in time with the 1955 Buick Roadmaster, an iconic classic known for its timeless design and luxurious ride."
 }
 
 ### Add Vehicle #9 for Owner 4
@@ -175,7 +191,9 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJ1c2VycyIsI
   "latitude": 51.57947,
   "longitude": 4.752594,
   "price": 70,
-  "availability": true
+  "availability": true,
+  "address": "Tuinzigtlaan 1, 4813 XH Breda, Netherlands",
+  "description": "Experience the thrill of the open road with the Mazda MX-5 RF, a sleek and sporty convertible designed for pure driving enjoyment."
 }
 
 ### Add Vehicle #10 for Owner 4
@@ -195,7 +213,9 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJ1c2VycyIsI
   "latitude": 51.587839,
   "longitude": 4.755652,
   "price": 80,
-  "availability": true
+  "availability": true,
+  "address": "Plataanstraat 82, 4814 LE Breda, Netherlands",
+  "description": "Conquer any terrain with the powerful F-150, outperform anybody with this Raptor!"
 }
 
 ###
