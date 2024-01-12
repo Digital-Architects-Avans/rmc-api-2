@@ -1,6 +1,7 @@
 package com.digitalarchitects.data.vehicle
 
 import com.digitalarchitects.data.ObjectIdAsStringSerializer
+import io.ktor.network.sockets.*
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 import org.litote.kmongo.Id
@@ -25,5 +26,7 @@ data class Vehicle(
     val latitude: Float,
     val longitude: Float,
     val price: Double,
-    val availability: Boolean
+    val availability: Boolean,
+    val address: String,
+    val description: String
 )

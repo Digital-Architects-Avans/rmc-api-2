@@ -100,7 +100,9 @@ fun Route.vehicleRoutes(
                     latitude = request.latitude,
                     longitude = request.longitude,
                     price = request.price,
-                    availability = request.availability
+                    availability = request.availability,
+                    address = request.address,
+                    description = request.description
                 )
 
                 val vehicleId  = vehicleDataSource.insertVehicle(vehicle)
