@@ -1,2 +1,2 @@
-runtime: java11
+runtime: java21
 entrypoint: 'java -jar rmc-api-2-all.jar'
