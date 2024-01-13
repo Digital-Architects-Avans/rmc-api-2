@@ -8,6 +8,7 @@ interface VehicleDataSource {
     suspend fun insertVehicle(vehicle: Vehicle): String?
     suspend fun getVehicles(): List<Vehicle>
     suspend fun getVehicleById(vehicleId: String): Vehicle?
+    suspend fun setVehicleAvailability(vehicleId: String, availability: Boolean): Boolean
     suspend fun updateVehicle(vehicleId: String, updatedVehicle: UpdateVehicleRequest): Boolean
     suspend fun deleteVehicleById(vehicleId: String): Boolean
 }

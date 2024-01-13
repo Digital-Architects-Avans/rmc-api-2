@@ -1,5 +1,6 @@
 package com.digitalarchitects.route.vehicle
 
+import com.digitalarchitects.data.rental.RentalStatus
 import com.digitalarchitects.data.requests.CreateVehicleRequest
 import com.digitalarchitects.data.requests.UpdateVehicleRequest
 import com.digitalarchitects.data.user.UserDataSource
@@ -105,7 +106,7 @@ fun Route.vehicleRoutes(
                     availability = request.availability
                 )
 
-                val vehicleId  = vehicleDataSource.insertVehicle(vehicle)
+                val vehicleId = vehicleDataSource.insertVehicle(vehicle)
 
                 if (vehicleId != null) {
                     vehicleDataSource.getVehicleById(vehicleId)?.let { response ->
@@ -149,6 +150,48 @@ fun Route.vehicleRoutes(
             } catch (e: Exception) {
                 e.printStackTrace()
                 call.respondText("Unexpected error: $e", status = HttpStatusCode.InternalServerError)
+            }
+        }
+
+        put("/vehicles/{vehicleId}/{availability}") {
+            val vehicleId = call.parameters["vehicleId"] ?: run {
+                call.respondText("Invalid vehicleId", status = HttpStatusCode.BadRequest)
+                return@put
+            }
+
+            val availability = call.parameters["availability"] ?: run {
+                call.respondText("Invalid availability", status = HttpStatusCode.BadRequest)
+                return@put
+            }
+
+            if (availability.toBooleanStrictOrNull() == null) {
+                call.respondText(
+                    "Invalid availability value. It must be 'true' or 'false', $availability",
+                    status = HttpStatusCode.BadRequest
+                )
+                return@put
+            }
+
+            try {
+                val vehicleAvailability = availability.toBoolean()
+
+                val availabilityIsUpdated = vehicleDataSource.setVehicleAvailability(vehicleId, vehicleAvailability)
+
+                if (availabilityIsUpdated) {
+                    call.respondText(
+                        "Vehicle availability successfully updated to $vehicleAvailability",
+                        status = HttpStatusCode.OK
+                    )
+                } else {
+                    call.respondText(
+                        "Failed to update vehicle availability",
+                        status = HttpStatusCode.InternalServerError
+                    )
+                }
+            } catch (e: IllegalArgumentException) {
+                call.respondText("Invalid availability status", status = HttpStatusCode.BadRequest)
+            } catch (e: Exception) {
+                call.respondText("An error occurred: $e", status = HttpStatusCode.InternalServerError)
             }
         }
 

@@ -1,7 +1,7 @@
 package com.digitalarchitects.data.vehicle
 
+import com.digitalarchitects.data.rental.Rental
 import com.digitalarchitects.data.requests.UpdateVehicleRequest
-import com.digitalarchitects.data.user.User
 import org.bson.types.ObjectId
 import org.litote.kmongo.Id
 import org.litote.kmongo.coroutine.CoroutineDatabase
@@ -33,6 +33,18 @@ class MongoVehicleDataSource(
 
     override suspend fun getVehicleById(vehicleId: String): Vehicle? {
         return vehicles.findOne(Vehicle::vehicleId eq vehicleId)
+    }
+
+    override suspend fun setVehicleAvailability(vehicleId: String, availability: Boolean): Boolean {
+        val vehicle = getVehicleById(vehicleId) ?: return false
+
+        val updatedDocument = vehicle.copy(
+            availability = availability
+        )
+
+        val updateResult = vehicles.replaceOne(Vehicle::vehicleId eq vehicleId, updatedDocument)
+
+        return updateResult.wasAcknowledged()
     }
 
     override suspend fun updateVehicle(vehicleId: String, updatedVehicle: UpdateVehicleRequest): Boolean {

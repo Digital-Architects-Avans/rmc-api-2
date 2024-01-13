@@ -196,7 +196,7 @@ fun Route.rentalRoutes(
                 val statusIsUpdated = rentalDataSource.setRentalStatus(rentalId, rentalStatus)
 
                 if (statusIsUpdated) {
-                    call.respondText("Vehicle status successfully updated to $status", status = HttpStatusCode.OK)
+                    call.respondText("Rental status successfully updated to $status", status = HttpStatusCode.OK)
                 } else {
                     call.respondText("Failed to update rental status", status = HttpStatusCode.InternalServerError)
                 }
