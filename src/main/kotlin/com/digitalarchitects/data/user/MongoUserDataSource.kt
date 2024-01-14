@@ -48,7 +48,8 @@ class MongoUserDataSource(
             street = updatedUser.street,
             buildingNumber = updatedUser.buildingNumber,
             zipCode = updatedUser.zipCode,
-            city = updatedUser.city
+            city = updatedUser.city,
+            profileImageSrc = updatedUser.profileImageSrc
         )
 
         val updateResult = users.replaceOne(User::userId eq userId, updatedDocument)

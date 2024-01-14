@@ -4,6 +4,7 @@ import com.digitalarchitects.data.rental.RentalDataSource
 import com.digitalarchitects.data.user.UserDataSource
 import com.digitalarchitects.data.vehicle.VehicleDataSource
 import com.digitalarchitects.route.auth.authRoutes
+import com.digitalarchitects.route.file.uploadFile
 import com.digitalarchitects.route.rental.rentalRoutes
 import com.digitalarchitects.route.user.userRoutes
 import com.digitalarchitects.route.vehicle.vehicleRoutes
@@ -26,5 +27,6 @@ fun Application.configureRouting(
         userRoutes(userDataSource)
         vehicleRoutes(userDataSource, vehicleDataSource)
         rentalRoutes(userDataSource, rentalDataSource, vehicleDataSource)
+        uploadFile()
     }
 }
