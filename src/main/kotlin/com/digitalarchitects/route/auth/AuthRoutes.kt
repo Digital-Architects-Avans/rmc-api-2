@@ -55,7 +55,8 @@ fun Route.authRoutes(
             street = request.street,
             buildingNumber = request.buildingNumber,
             zipCode = request.zipCode,
-            city = request.city
+            city = request.city,
+            profileImageSrc = request.profileImageSrc
         )
         val userId = userDataSource.insertUser(user)
         if (userId != null) {

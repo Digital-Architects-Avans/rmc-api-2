@@ -15,4 +15,5 @@ data class SignUpRequest(
     val buildingNumber: String,
     val zipCode: String,
     val city: String,
+    val profileImageSrc: String
 )

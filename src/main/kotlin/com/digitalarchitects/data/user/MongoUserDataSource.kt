@@ -35,12 +35,13 @@ class MongoUserDataSource(
         return users.findOne(User::userId eq userId)
     }
 
-    override suspend fun updateUser(userId: String, updatedUser: UpdateUserRequest): Boolean {
+    override suspend fun updateUser(userId: String, updatedUser: User): Boolean {
         val user = getUserById(userId) ?: return false
 
         val updatedDocument = user.copy(
             email = updatedUser.email,
             password = updatedUser.password,
+            salt = updatedUser.salt,
             userType = updatedUser.userType,
             firstName = updatedUser.firstName,
             lastName = updatedUser.lastName,
@@ -48,7 +49,20 @@ class MongoUserDataSource(
             street = updatedUser.street,
             buildingNumber = updatedUser.buildingNumber,
             zipCode = updatedUser.zipCode,
-            city = updatedUser.city
+            city = updatedUser.city,
+            profileImageSrc = updatedUser.profileImageSrc
+        )
+
+        val updateResult = users.replaceOne(User::userId eq userId, updatedDocument)
+
+        return updateResult.wasAcknowledged()
+    }
+
+    override suspend fun updateProfileImageSrc(userId: String, profileImageSrc: String): Boolean {
+        val user = getUserById(userId) ?: return false
+
+        val updatedDocument = user.copy(
+            profileImageSrc = profileImageSrc
         )
 
         val updateResult = users.replaceOne(User::userId eq userId, updatedDocument)
