@@ -3,10 +3,7 @@ package com.digitalarchitects
 import com.digitalarchitects.data.rental.MongoRentalDataSource
 import com.digitalarchitects.data.user.MongoUserDataSource
 import com.digitalarchitects.data.vehicle.MongoVehicleDataSource
-import com.digitalarchitects.plugins.configureMonitoring
-import com.digitalarchitects.plugins.configureRouting
-import com.digitalarchitects.plugins.configureSecurity
-import com.digitalarchitects.plugins.configureSerialization
+import com.digitalarchitects.plugins.*
 import com.digitalarchitects.security.hashing.SHA256HashingService
 import com.digitalarchitects.security.token.JwtTokenService
 import com.digitalarchitects.security.token.TokenConfig
@@ -14,11 +11,14 @@ import io.ktor.server.application.*
 import org.litote.kmongo.coroutine.coroutine
 import org.litote.kmongo.reactivestreams.KMongo
 
+
 fun main(args: Array<String>) {
     io.ktor.server.netty.EngineMain.main(args)
 }
 
 fun Application.module() {
+    FirebaseAdmin.init()
+
     val db = KMongo.createClient(
         connectionString = "mongodb+srv://rmcKtor:rmcKtor@cluster0.j39xyce.mongodb.net/rmcKtor?retryWrites=true&w=majority"
     ).coroutine

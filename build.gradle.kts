@@ -14,7 +14,10 @@ val uberJarFileName: String = "rmc-api-2-all.jar"
 // Unfortunately the appengine gradle plugin is not available on Gradle's Plugin Repository:
 // https://github.com/GoogleCloudPlatform/app-gradle-plugin
 buildscript {
-    repositories { mavenCentral() }
+    repositories {
+        mavenCentral()
+        google()
+    }
     dependencies { classpath("com.google.cloud.tools:appengine-gradle-plugin:2.5.0") }
 }
 apply {
@@ -44,8 +47,8 @@ application {
 }
 
 repositories {
-    mavenLocal()
     mavenCentral()
+    google()
 }
 
 dependencies {
@@ -67,6 +70,11 @@ dependencies {
     implementation("org.litote.kmongo:kmongo-coroutine:$kmongoVersion")
 
     implementation("commons-codec:commons-codec:$commonsCodecVersion")
+
+    // Firebase
+    implementation(platform("com.google.cloud:libraries-bom:26.29.0"))
+    implementation("com.google.cloud:google-cloud-storage")
+    implementation("com.google.firebase:firebase-admin:9.1.1")
 }
 
 // Configure the "shadowJar" task to properly build our UberJar
