@@ -24,7 +24,7 @@ fun Application.configureRouting(
 ) {
     routing {
         authRoutes(userDataSource, hashingService, tokenService, tokenConfig)
-        userRoutes(userDataSource)
+        userRoutes(userDataSource, hashingService)
         vehicleRoutes(userDataSource, vehicleDataSource)
         rentalRoutes(userDataSource, rentalDataSource, vehicleDataSource)
         uploadFile()

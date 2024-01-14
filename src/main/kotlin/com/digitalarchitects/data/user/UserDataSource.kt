@@ -8,6 +8,7 @@ interface UserDataSource {
     suspend fun insertUser(user: User): String?
     suspend fun getUsers(): List<User>
     suspend fun getUserById(userId: String): User?
-    suspend fun updateUser(userId: String, updatedUser: UpdateUserRequest): Boolean
+    suspend fun updateUser(userId: String, updatedUser: User): Boolean
+    suspend fun updateProfileImageSrc(userId: String, profileImageSrc: String): Boolean
     suspend fun deleteUserById(userId: String): Boolean
 }
