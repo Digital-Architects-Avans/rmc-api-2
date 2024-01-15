@@ -5,7 +5,7 @@ Content-Type: application/json
   "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJ1c2VycyIsImlzcyI6Imh0dHA6Ly8wLjAuMC4wOjgwODAiLCJleHAiOjE3MzU3NDY5MjQsInVzZXJJZCI6IjY1OTM1MTM0NThmNTlkMzA1ZjJmYTEzMSJ9.7rbSDhmNAp5SJB0fh6hMq3zxWlZTRVubRUFV8OhXYdc"
 }
 
-### Add Owner #1
+### Add Owner #1 / User #1
 POST http://localhost:8080/signup
 Content-Type: application/json
 
@@ -19,10 +19,11 @@ Content-Type: application/json
   "street": "Rietsemalaan",
   "buildingNumber": "14",
   "zipCode": "4817 KX",
-  "city": "Breda"
+  "city": "Breda",
+  "profileImageSrc": ""
 }
 
-### Add Owner #2
+### Add Owner #2 / User #2
 POST http://localhost:8080/signup
 Content-Type: application/json
 
@@ -36,10 +37,11 @@ Content-Type: application/json
   "street": "Julianalaan",
   "buildingNumber": "9",
   "zipCode": "4819 AB",
-  "city": "Breda"
+  "city": "Breda",
+  "profileImageSrc": ""
 }
 
-### Add Owner #3
+### Add Owner #3 / User #3
 POST http://localhost:8080/signup
 Content-Type: application/json
 
@@ -53,10 +55,11 @@ Content-Type: application/json
   "street": "Zandberglaan",
   "buildingNumber": "15",
   "zipCode": "4818 GH",
-  "city": "Breda"
+  "city": "Breda",
+  "profileImageSrc": ""
 }
 
-### Add Owner #4
+### Add Owner #4 / User #4
 POST http://localhost:8080/signup
 Content-Type: application/json
 
@@ -70,10 +73,11 @@ Content-Type: application/json
   "street": "Plataanstraat",
   "buildingNumber": "82",
   "zipCode": "4814 LE",
-  "city": "Breda"
+  "city": "Breda",
+  "profileImageSrc": ""
 }
 
-### Add Renter #1
+### Add Renter #1 / User #5
 POST http://localhost:8080/signup
 Content-Type: application/json
 
@@ -87,10 +91,11 @@ Content-Type: application/json
   "street": "Turnhoutstraat",
   "buildingNumber": "8",
   "zipCode": "4826 KD",
-  "city": "Breda"
+  "city": "Breda",
+  "profileImageSrc": ""
 }
 
-### Add Renter #2
+### Add Renter #2 / User #6
 POST http://localhost:8080/signup
 Content-Type: application/json
 
@@ -104,10 +109,11 @@ Content-Type: application/json
   "street": "Koekoekstraat",
   "buildingNumber": "23",
   "zipCode": "4815 AN",
-  "city": "Breda"
+  "city": "Breda",
+  "profileImageSrc": ""
 }
 
-### Add Renter #3
+### Add Renter #3 / User #7
 POST http://localhost:8080/signup
 Content-Type: application/json
 
@@ -121,10 +127,11 @@ Content-Type: application/json
   "street": "Baronielaan 192",
   "buildingNumber": "192",
   "zipCode": "4837 BG",
-  "city": "Breda"
+  "city": "Breda",
+  "profileImageSrc": ""
 }
 
-### Add Renter #4
+### Add Renter #4 / User #8
 POST http://localhost:8080/signup
 Content-Type: application/json
 
@@ -138,7 +145,8 @@ Content-Type: application/json
   "street": "Loevesteinstraat",
   "buildingNumber": "20",
   "zipCode": "4834 ED",
-  "city": "Breda"
+  "city": "Breda",
+  "profileImageSrc": ""
 }
 
 ###
